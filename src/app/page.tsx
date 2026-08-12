@@ -55,18 +55,18 @@ const marketMeta: Record<MarketId, { label: string; color: string }> = {
   joybuy: { label: "Joybuy", color: "#8be0d2" },
   aliexpress: { label: "AliExpress", color: "#ff6b35" },
   bestbuy: { label: "Best Buy", color: "#7bd1ff" },
-  official: { label: "品牌商城", color: "#8da9c4" },
+  official: { label: "Фирменный магазин", color: "#8da9c4" },
 };
 
 const categories: { id: CategoryId; title: string; description: string }[] = [
-  { id: "cpu", title: "处理器", description: "加入 AMD Ryzen 与 Intel Core / Core Ultra 主流 DIY CPU，覆盖游戏、创作和通用装机场景。" },
-  { id: "motherboard", title: "主板", description: "补充 AM5、LGA1700、LGA1851 多平台主板，方便自由切换 AMD / Intel 方案。" },
-  { id: "gpu", title: "显卡", description: "扩展 MSI、ASUS、Gigabyte、Palit、GALAX 等热门显卡型号，覆盖 1080p 到 4K 档位。" },
-  { id: "ram", title: "内存", description: "补充 Corsair、Crucial、Kingston、G.SKILL 常用 DDR5 套条，兼顾性价比与灯效。" },
-  { id: "ssd", title: "固态硬盘", description: "加入 Samsung、WD、Crucial、Lexar 等常见 NVMe SSD，包含 PCIe 4.0 与 Gen5 选项。" },
-  { id: "cooler", title: "散热器", description: "同时提供 360 水冷与主流高颜值散热方案，并标注对 AM5、LGA1700、LGA1851 的支持情况。" },
-  { id: "psu", title: "电源", description: "补足 550W 到 850W 电源段位，适合从入门到高性能显卡装机。" },
-  { id: "case", title: "机箱", description: "加入 MSI、NZXT、Lian Li 等常用风道机箱，方便根据主板板型和显卡长度自由搭配。" },
+  { id: "cpu", title: "Процессор", description: "Добавлены популярные DIY-процессоры AMD Ryzen и Intel Core / Core Ultra для игр, творчества и универсальных сборок." },
+  { id: "motherboard", title: "Материнская плата", description: "Добавлены материнские платы для платформ AM5, LGA1700 и LGA1851, чтобы можно было свободно выбирать решения AMD или Intel." },
+  { id: "gpu", title: "Видеокарта", description: "Расширен список популярных видеокарт MSI, ASUS, Gigabyte, Palit, GALAX и других брендов — от 1080p до 4K." },
+  { id: "ram", title: "Оперативная память", description: "Добавлены популярные комплекты DDR5 от Corsair, Crucial, Kingston и G.SKILL, сочетающие цену и внешний вид." },
+  { id: "ssd", title: "SSD-накопитель", description: "Добавлены распространённые NVMe SSD от Samsung, WD, Crucial, Lexar и других брендов, включая варианты PCIe 4.0 и Gen5." },
+  { id: "cooler", title: "Охлаждение", description: "Добавлены 360-мм СЖО и популярные красивые решения охлаждения с указанием поддержки AM5, LGA1700 и LGA1851." },
+  { id: "psu", title: "Блок питания", description: "Добавлены блоки питания от 550W до 850W для сборок от начального до высокопроизводительного уровня." },
+  { id: "case", title: "Корпус", description: "Добавлены популярные корпуса MSI, NZXT, Lian Li и других брендов с хорошим воздушным потоком, чтобы удобно подбирать их по форм-фактору платы и длине видеокарты." },
 ];
 
 const catalogParts: Part[] = [
@@ -75,14 +75,14 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Ryzen 5 9600",
     brand: "AMD",
-    summary: "偏主流预算的 AM5 六核处理器，适合 1080p / 1440p 游戏装机。",
-    tags: ["AM5", "6 核", "65W"],
+    summary: "Шестиядерный процессор AM5 среднего бюджета, хорошо подходящий для игровых сборок в 1080p / 1440p.",
+    tags: ["AM5", "6 ядер", "65W"],
     specs: { socket: "AM5", tdp: 65 },
     offers: [
       {
         id: "cpu-9600-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 199,
         currency: "GBP",
         note: "Joybuy UK",
@@ -95,23 +95,23 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Ryzen 7 7800X3D",
     brand: "AMD",
-    summary: "经典 8 核 16 线程游戏 CPU，仍然是高性价比热门选择。",
-    tags: ["AM5", "8 核", "120W"],
+    summary: "Классический игровой CPU с 8 ядрами и 16 потоками, который до сих пор остаётся популярным выбором с отличным соотношением цены и производительности.",
+    tags: ["AM5", "8 ядер", "120W"],
     specs: { socket: "AM5", tdp: 120 },
     offers: [
       {
         id: "cpu-7800x3d-amazon",
         market: "amazon",
-        title: "价格跟踪",
+        title: "Отслеживание цены",
         price: 384,
         currency: "USD",
-        note: "Camel 快照",
+        note: "Снимок Camel",
         url: "https://camelcamelcamel.com/popular?bn=electronics&deal=0&p=1",
       },
       {
         id: "cpu-7800x3d-aliexpress",
         market: "aliexpress",
-        title: "平台快照",
+        title: "Снимок цены на площадке",
         price: 323.96,
         currency: "USD",
         note: "PriceArchive",
@@ -124,14 +124,14 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Ryzen 7 9700X",
     brand: "AMD",
-    summary: "新一代 8 核 Ryzen，兼顾多任务、创作与高刷游戏。",
-    tags: ["AM5", "8 核", "65W"],
+    summary: "Новое поколение 8-ядерного Ryzen, подходящее для многозадачности, творчества и игр с высокой частотой кадров.",
+    tags: ["AM5", "8 ядер", "65W"],
     specs: { socket: "AM5", tdp: 65 },
     offers: [
       {
         id: "cpu-9700x-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 295.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -144,14 +144,14 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Ryzen 7 9800X3D",
     brand: "AMD",
-    summary: "更高阶的 X3D 游戏处理器，适合高端显卡搭配。",
-    tags: ["AM5", "8 核", "高端"],
+    summary: "Более продвинутый игровой процессор серии X3D, хорошо подходящий для связки с видеокартами высокого класса.",
+    tags: ["AM5", "8 ядер", "Высокий класс"],
     specs: { socket: "AM5", tdp: 120 },
     offers: [
       {
         id: "cpu-9800x3d-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 419.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -160,10 +160,10 @@ const catalogParts: Part[] = [
       {
         id: "cpu-9800x3d-amazon",
         market: "amazon",
-        title: "价格跟踪",
+        title: "Отслеживание цены",
         price: 419.95,
         currency: "USD",
-        note: "Camel 快照",
+        note: "Снимок Camel",
         url: "https://camelcamelcamel.com/popular?deal=0",
       },
     ],
@@ -173,14 +173,14 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Core i5-14600K",
     brand: "Intel",
-    summary: "热门 Intel 中高端装机处理器，适合游戏和直播混合需求。",
-    tags: ["LGA1700", "14 核", "125W"],
+    summary: "Популярный процессор Intel среднего-высокого уровня, подходящий для игр и смешанных задач вроде стриминга.",
+    tags: ["LGA1700", "14 ядер", "125W"],
     specs: { socket: "LGA1700", tdp: 125 },
     offers: [
       {
         id: "cpu-14600k-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 259.99,
         currency: "USD",
         note: "Best Buy",
@@ -193,14 +193,14 @@ const catalogParts: Part[] = [
     category: "cpu",
     name: "Core Ultra 7 265K",
     brand: "Intel",
-    summary: "LGA1851 平台的高性能处理器，适合新平台尝鲜与生产力装机。",
-    tags: ["LGA1851", "20 核", "125W"],
+    summary: "Высокопроизводительный процессор для платформы LGA1851, подходящий для новых платформ и производительных рабочих сборок.",
+    tags: ["LGA1851", "20 ядер", "125W"],
     specs: { socket: "LGA1851", tdp: 125 },
     offers: [
       {
         id: "cpu-265k-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 399.99,
         currency: "USD",
         note: "Best Buy",
@@ -213,14 +213,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "MAG B650 Tomahawk WIFI",
     brand: "MSI",
-    summary: "AM5 平台里非常常见的 ATX 主板，适合均衡型装机。",
+    summary: "Очень распространённая ATX-плата для платформы AM5, хорошо подходящая для сбалансированных сборок.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b650-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 153.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -233,14 +233,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "B850 Gaming Plus WIFI6E",
     brand: "MSI",
-    summary: "更偏新平台的 AM5 主板，适合 Ryzen 9000 系装机。",
+    summary: "Более современная материнская плата AM5, хорошо подходящая для сборок на Ryzen 9000.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b850-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 129.98,
         currency: "GBP",
         note: "Joybuy UK",
@@ -253,14 +253,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "BATTLE-AX B650M-E WIFI V14",
     brand: "Colorful",
-    summary: "偏预算友好的 AM5 mATX 主板，适合压低整机成本。",
+    summary: "Более бюджетная материнская плата AM5 формата mATX, подходящая для снижения общей стоимости сборки.",
     tags: ["AM5", "mATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "mATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-colorful-b650me-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 99.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -273,14 +273,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "CVN B650M GAMING FROZEN V14",
     brand: "Colorful",
-    summary: "高颜值白色 AM5 主板，适合白色主题机箱搭配。",
-    tags: ["AM5", "mATX", "DDR5", "White"],
+    summary: "Эффектная белая материнская плата AM5, хорошо подходящая для белых тематических корпусов.",
+    tags: ["AM5", "mATX", "DDR5", "Белая"],
     specs: { socket: "AM5", formFactor: "mATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-colorful-frozen-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 129.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -293,14 +293,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "Z790 Gaming Plus WIFI",
     brand: "MSI",
-    summary: "LGA1700 常用 DDR5 主板，适合搭配 i5-14600K 等 Intel 热门 CPU。",
+    summary: "Популярная DDR5-плата для LGA1700, хорошо подходящая для i5-14600K и других востребованных процессоров Intel.",
     tags: ["LGA1700", "ATX", "DDR5"],
     specs: { socket: "LGA1700", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-z790-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 189.99,
         currency: "USD",
         note: "Best Buy",
@@ -313,14 +313,14 @@ const catalogParts: Part[] = [
     category: "motherboard",
     name: "B860M Gaming X WIFI6E DDR5",
     brand: "Gigabyte",
-    summary: "适合 Core Ultra 平台的 mATX 主板，适合较新的 Intel DIY 配置。",
+    summary: "Материнская плата mATX для платформы Core Ultra, подходящая для более новых DIY-сборок на Intel.",
     tags: ["LGA1851", "mATX", "DDR5"],
     specs: { socket: "LGA1851", formFactor: "mATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b860-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 185,
         currency: "GBP",
         note: "Joybuy UK",
@@ -333,14 +333,14 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5060 8G VENTUS 2X OC",
     brand: "MSI",
-    summary: "主流 1080p / 1440p 双风扇显卡，适合平衡型整机。",
-    tags: ["8GB", "145W", "双风扇"],
+    summary: "Популярная двухвентиляторная видеокарта для 1080p / 1440p, подходящая для сбалансированных сборок.",
+    tags: ["8GB", "145W", "Два вентилятора"],
     specs: { boardPower: 145, lengthMm: 227 },
     offers: [
       {
         id: "gpu-5060-msi-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 259.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -353,14 +353,14 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "RTX 5060 Ti 8GB 二手渠道价",
     brand: "GALAX",
-    summary: "用于对比二手价格区间，适合预算敏感型装机参考。",
-    tags: ["8GB", "180W", "二手"],
+    summary: "Используется для сравнения цен на вторичном рынке и подходит как ориентир для бюджетных сборок.",
+    tags: ["8GB", "180W", "Б/у"],
     specs: { boardPower: 180, lengthMm: 250 },
     offers: [
       {
         id: "gpu-5060ti-galax-aliexpress",
         market: "aliexpress",
-        title: "平台快照",
+        title: "Снимок цены на площадке",
         price: 230.12,
         currency: "USD",
         note: "PriceArchive",
@@ -373,17 +373,17 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5060 Dual 8GB GDDR7",
     brand: "Palit",
-    summary: "又一个常见的入门新卡选择，适合预算型游戏主机。",
+    summary: "Ещё один распространённый вариант новой видеокарты начального уровня, подходящий для бюджетных игровых сборок.",
     tags: ["8GB", "145W", "Dual"],
     specs: { boardPower: 145, lengthMm: 249 },
     offers: [
       {
         id: "gpu-5060-palit-joybuy",
         market: "joybuy",
-        title: "活动快照",
+        title: "Снимок акционной цены",
         price: 291.99,
         currency: "GBP",
-        note: "Joybuy 活动页",
+        note: "Акционная страница Joybuy",
         url: "https://www.joybuy.co.uk/cms/unleash-the-ultimate-gaming-power",
       },
     ],
@@ -393,14 +393,14 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5070 WINDFORCE OC SFF 12G",
     brand: "Gigabyte",
-    summary: "更适合 1440p 高画质的热门显卡，长度控制也更友好。",
+    summary: "Популярная видеокарта, лучше подходящая для 1440p на высоких настройках, при этом более удобная по длине.",
     tags: ["12GB", "250W", "SFF"],
     specs: { boardPower: 250, lengthMm: 282 },
     offers: [
       {
         id: "gpu-5070-gigabyte-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 508.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -413,17 +413,17 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5070 12G GAMING TRIO OC",
     brand: "MSI",
-    summary: "面向中高端 1440p / 4K 的三风扇显卡，适合高性能整机。",
-    tags: ["12GB", "250W", "三风扇"],
+    summary: "Трёхвентиляторная видеокарта среднего-высокого уровня для 1440p / 4K, подходящая для производительных систем.",
+    tags: ["12GB", "250W", "Три вентилятора"],
     specs: { boardPower: 250, lengthMm: 338 },
     offers: [
       {
         id: "gpu-5070-msi-joybuy",
         market: "joybuy",
-        title: "活动快照",
+        title: "Снимок акционной цены",
         price: 655,
         currency: "GBP",
-        note: "Joybuy 活动页",
+        note: "Акционная страница Joybuy",
         url: "https://www.joybuy.co.uk/cms/unleash-the-ultimate-gaming-power",
       },
     ],
@@ -433,14 +433,14 @@ const catalogParts: Part[] = [
     category: "gpu",
     name: "TUF Gaming GeForce RTX 5070 Ti OC 16GB",
     brand: "ASUS",
-    summary: "更高一档的 16GB 显卡，适合高端 1440p 和 4K 游戏主机。",
+    summary: "Видеокарта более высокого класса с 16GB памяти, подходящая для высокоуровневых игровых систем в 1440p и 4K.",
     tags: ["16GB", "300W", "TUF"],
     specs: { boardPower: 300, lengthMm: 329 },
     offers: [
       {
         id: "gpu-5070ti-asus-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 1037.99,
         currency: "USD",
         note: "Best Buy",
@@ -453,14 +453,14 @@ const catalogParts: Part[] = [
     category: "ram",
     name: "Crucial Pro DDR5 32GB 6000",
     brand: "Crucial",
-    summary: "偏性价比的 32GB DDR5 套条，适合预算优先方案。",
+    summary: "Комплект 32GB DDR5 с хорошим соотношением цены и качества, подходящий для сборок с упором на бюджет.",
     tags: ["32GB", "DDR5-6000"],
     specs: { memoryType: "DDR5" },
     offers: [
       {
         id: "ram-crucial-aliexpress",
         market: "aliexpress",
-        title: "平台快照",
+        title: "Снимок цены на площадке",
         price: 53.79,
         currency: "USD",
         note: "PriceArchive",
@@ -473,17 +473,17 @@ const catalogParts: Part[] = [
     category: "ram",
     name: "Vengeance RGB DDR5 32GB 6000",
     brand: "Corsair",
-    summary: "非常常见的主流 RGB 内存，适合高颜值装机。",
+    summary: "Очень распространённая RGB-память среднего класса, хорошо подходящая для эффектных сборок.",
     tags: ["32GB", "DDR5-6000", "RGB"],
     specs: { memoryType: "DDR5" },
     offers: [
       {
         id: "ram-corsair-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 436.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/memory/cmh32gx5m2b6000c40/vengeance-rgb-32gb-2x16gb-ddr5-dram-6000mhz-c40-memory-kit-black-cmh32gx5m2b6000c40",
       },
     ],
@@ -493,14 +493,14 @@ const catalogParts: Part[] = [
     category: "ram",
     name: "FURY Beast RGB DDR5 32GB 6000",
     brand: "Kingston",
-    summary: "常见的游戏装机 RGB 套条，适合 Intel / AMD 双平台。",
+    summary: "Популярный игровой комплект RGB-памяти, подходящий как для платформ Intel, так и AMD.",
     tags: ["32GB", "DDR5-6000", "RGB"],
     specs: { memoryType: "DDR5" },
     offers: [
       {
         id: "ram-kingston-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 474.21,
         currency: "USD",
         note: "Best Buy",
@@ -513,14 +513,14 @@ const catalogParts: Part[] = [
     category: "ram",
     name: "Trident Z5 Neo RGB DDR5 32GB 6000",
     brand: "G.SKILL",
-    summary: "热门高端 RGB 内存，常用于 Ryzen 高性能整机。",
+    summary: "Популярная премиальная RGB-память, часто используемая в высокопроизводительных сборках на Ryzen.",
     tags: ["32GB", "DDR5-6000", "EXPO"],
     specs: { memoryType: "DDR5" },
     offers: [
       {
         id: "ram-gskill-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 538.99,
         currency: "USD",
         note: "Best Buy",
@@ -533,17 +533,17 @@ const catalogParts: Part[] = [
     category: "ssd",
     name: "990 PRO 1TB",
     brand: "Samsung",
-    summary: "经典高性能 PCIe 4.0 SSD，适合游戏和系统盘。",
+    summary: "Классический высокопроизводительный SSD PCIe 4.0, хорошо подходящий для игр и системного диска.",
     tags: ["1TB", "PCIe 4.0"],
     specs: { capacityTb: 1 },
     offers: [
       {
         id: "ssd-990pro-amazon",
         market: "amazon",
-        title: "价格跟踪",
+        title: "Отслеживание цены",
         price: 199.99,
         currency: "USD",
-        note: "Camel 快照",
+        note: "Снимок Camel",
         url: "https://camelcamelcamel.com/popular?bn=electronics&deal=0&p=1",
       },
     ],
@@ -553,14 +553,14 @@ const catalogParts: Part[] = [
     category: "ssd",
     name: "T500 2TB",
     brand: "Crucial",
-    summary: "热门 2TB PCIe 4.0 SSD，适合游戏库与大型项目文件。",
+    summary: "Популярный SSD PCIe 4.0 на 2TB, хорошо подходящий для библиотеки игр и крупных рабочих файлов.",
     tags: ["2TB", "PCIe 4.0"],
     specs: { capacityTb: 2 },
     offers: [
       {
         id: "ssd-t500-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 244.99,
         currency: "USD",
         note: "Best Buy",
@@ -573,14 +573,14 @@ const catalogParts: Part[] = [
     category: "ssd",
     name: "WD_BLACK SN850X 2TB",
     brand: "Western Digital",
-    summary: "游戏装机里很常见的 2TB NVMe SSD，兼顾容量和高速读写。",
+    summary: "Очень распространённый NVMe SSD на 2TB для игровых сборок, сочетающий вместимость и высокую скорость.",
     tags: ["2TB", "PCIe 4.0"],
     specs: { capacityTb: 2 },
     offers: [
       {
         id: "ssd-sn850x-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 369.99,
         currency: "USD",
         note: "Best Buy",
@@ -593,14 +593,14 @@ const catalogParts: Part[] = [
     category: "ssd",
     name: "ARES PRO 2TB Gen5 NVMe",
     brand: "Lexar",
-    summary: "更偏高端的 Gen5 SSD，适合追求极限顺序速度的配置。",
+    summary: "Более премиальный Gen5 SSD, подходящий для конфигураций с упором на максимальную последовательную скорость.",
     tags: ["2TB", "Gen5"],
     specs: { capacityTb: 2 },
     offers: [
       {
         id: "ssd-arespro-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 249.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -613,14 +613,14 @@ const catalogParts: Part[] = [
     category: "cooler",
     name: "MAG CoreLiquid I360",
     brand: "MSI",
-    summary: "常见 360 一体式水冷，适合高性能显卡 + 高功耗 CPU 装机。",
-    tags: ["360 水冷", "ARGB"],
+    summary: "Распространённая 360-мм система жидкостного охлаждения, подходящая для мощных видеокарт и CPU с высоким тепловыделением.",
+    tags: ["360-мм СЖО", "ARGB"],
     specs: { supportedSockets: ["AM5", "LGA1700", "LGA1851"], radiatorMm: 360 },
     offers: [
       {
         id: "cooler-msi-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 94.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -633,14 +633,14 @@ const catalogParts: Part[] = [
     category: "cooler",
     name: "Levita Vision 360",
     brand: "Thermalright",
-    summary: "提供 AliExpress 平台的 360 水冷价格参考，适合白色 / 海景机箱装机。",
-    tags: ["360 水冷", "LCD"],
+    summary: "Вариант 360-мм СЖО с ценой с AliExpress, хорошо подходящий для белых и панорамных корпусов.",
+    tags: ["360-мм СЖО", "LCD"],
     specs: { supportedSockets: ["AM5", "LGA1700"], radiatorMm: 360 },
     offers: [
       {
         id: "cooler-thermalright-aliexpress",
         market: "aliexpress",
-        title: "平台快照",
+        title: "Снимок цены на площадке",
         price: 256.63,
         currency: "USD",
         note: "PriceArchive",
@@ -653,17 +653,17 @@ const catalogParts: Part[] = [
     category: "cooler",
     name: "iCUE LINK H150i RGB",
     brand: "Corsair",
-    summary: "高端 360 水冷，适合主题灯效和中高端 Intel / AMD 平台。",
-    tags: ["360 水冷", "RGB"],
+    summary: "Премиальная 360-мм СЖО, подходящая для эффектной подсветки и платформ Intel / AMD среднего и высокого уровня.",
+    tags: ["360-мм СЖО", "RGB"],
     specs: { supportedSockets: ["AM5", "LGA1700", "LGA1851"], radiatorMm: 360 },
     offers: [
       {
         id: "cooler-corsair-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 239.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/cpu-coolers/cw-9061008-ww/icue-link-h150i-rgb-liquid-cpu-cooler-cw-9061008-ww",
       },
     ],
@@ -673,17 +673,17 @@ const catalogParts: Part[] = [
     category: "cooler",
     name: "Kraken 360 RGB",
     brand: "NZXT",
-    summary: "常见高颜值 360 水冷，适合高端展示型机箱。",
-    tags: ["360 水冷", "LCD", "RGB"],
+    summary: "Популярная красивая 360-мм СЖО, хорошо подходящая для дорогих демонстрационных корпусов.",
+    tags: ["360-мм СЖО", "LCD", "RGB"],
     specs: { supportedSockets: ["AM5", "LGA1700", "LGA1851"], radiatorMm: 360 },
     offers: [
       {
         id: "cooler-nzxt-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 219.99,
         currency: "USD",
-        note: "NZXT 官方",
+        note: "Официальный магазин NZXT",
         url: "https://nzxt.com/en-US/product/kraken-360-rgb",
       },
     ],
@@ -693,14 +693,14 @@ const catalogParts: Part[] = [
     category: "psu",
     name: "MAG A550BN",
     brand: "MSI",
-    summary: "入门装机常用 550W 电源，适合预算型中低功耗显卡方案。",
+    summary: "Распространённый блок питания на 550W для начальных сборок, подходящий для бюджетных конфигураций с не слишком прожорливыми видеокартами.",
     tags: ["550W", "80 Plus"],
     specs: { wattage: 550 },
     offers: [
       {
         id: "psu-550-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 44.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -713,14 +713,14 @@ const catalogParts: Part[] = [
     category: "psu",
     name: "MAG A650GL",
     brand: "MSI",
-    summary: "主流中端整机常见 650W 全模组电源。",
-    tags: ["650W", "全模组"],
+    summary: "Распространённый полностью модульный блок питания на 650W для систем среднего уровня.",
+    tags: ["650W", "Полностью модульный"],
     specs: { wattage: 650 },
     offers: [
       {
         id: "psu-650-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 69.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -733,14 +733,14 @@ const catalogParts: Part[] = [
     category: "psu",
     name: "MAG A750GL PCIE5",
     brand: "MSI",
-    summary: "搭配 RTX 5070 级显卡较稳妥的 750W 选择。",
+    summary: "Надёжный вариант на 750W для систем с видеокартами уровня RTX 5070.",
     tags: ["750W", "ATX 3.0"],
     specs: { wattage: 750 },
     offers: [
       {
         id: "psu-750-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 99.98,
         currency: "GBP",
         note: "Joybuy UK",
@@ -753,14 +753,14 @@ const catalogParts: Part[] = [
     category: "psu",
     name: "MAG A850GL PCIE5 WHITE",
     brand: "MSI",
-    summary: "适合白色主题机箱和高端显卡方案的 850W 电源。",
-    tags: ["850W", "ATX 3.0", "White"],
+    summary: "Блок питания на 850W для белых тематических корпусов и конфигураций с мощными видеокартами.",
+    tags: ["850W", "ATX 3.0", "Белый"],
     specs: { wattage: 850 },
     offers: [
       {
         id: "psu-850-white-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 109.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -773,17 +773,17 @@ const catalogParts: Part[] = [
     category: "psu",
     name: "RM850e",
     brand: "Corsair",
-    summary: "Corsair 热门 850W 电源，适合高性能 Intel / AMD 配置。",
+    summary: "Популярный блок питания Corsair на 850W, хорошо подходящий для производительных конфигураций Intel и AMD.",
     tags: ["850W", "ATX 3.1"],
     specs: { wattage: 850 },
     offers: [
       {
         id: "psu-rm850e-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 124.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/psu/cp-9020296-na/rme-series-rm850e-fully-modular-low-noise-atx-power-supply-cp-9020296-na",
       },
     ],
@@ -793,14 +793,14 @@ const catalogParts: Part[] = [
     category: "case",
     name: "MAG Forge 120A Airflow",
     brand: "MSI",
-    summary: "主流入门风道机箱，适合预算型 ATX / mATX DIY 装机。",
-    tags: ["ATX", "风道"],
+    summary: "Популярный корпус начального уровня с хорошим воздушным потоком, подходящий для бюджетных ATX / mATX DIY-сборок.",
+    tags: ["ATX", "Воздушный поток"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 330, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-forge-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 47.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -813,14 +813,14 @@ const catalogParts: Part[] = [
     category: "case",
     name: "VELox 300R Airflow PZ",
     brand: "MSI",
-    summary: "更适合高端显卡和 360 水冷的中塔风道机箱。",
-    tags: ["ATX", "高风道", "360 水冷"],
+    summary: "Среднеразмерный корпус с хорошим воздушным потоком, лучше подходящий для мощных видеокарт и 360-мм СЖО.",
+    tags: ["ATX", "Усиленный воздушный поток", "360-мм СЖО"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 400, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-velox-joybuy",
         market: "joybuy",
-        title: "现货快照",
+        title: "Снимок текущей цены",
         price: 99.99,
         currency: "GBP",
         note: "Joybuy UK",
@@ -833,17 +833,17 @@ const catalogParts: Part[] = [
     category: "case",
     name: "H5 Flow",
     brand: "NZXT",
-    summary: "热门高风道中塔机箱，适合绝大多数主流装机。",
-    tags: ["ATX", "高风道"],
+    summary: "Популярный среднеразмерный корпус с хорошим воздушным потоком, подходящий для большинства массовых сборок.",
+    tags: ["ATX", "Усиленный воздушный поток"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 365, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-h5-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 74.99,
         currency: "USD",
-        note: "NZXT 官方",
+        note: "Официальный магазин NZXT",
         url: "https://nzxt.com/en-US/product/h5-flow",
       },
     ],
@@ -853,17 +853,17 @@ const catalogParts: Part[] = [
     category: "case",
     name: "H7 Flow",
     brand: "NZXT",
-    summary: "更大空间的高风道机箱，适合长显卡与多风扇方案。",
-    tags: ["ATX", "高风道", "中高端"],
+    summary: "Более просторный корпус с хорошим воздушным потоком, подходящий для длинных видеокарт и конфигураций с большим количеством вентиляторов.",
+    tags: ["ATX", "Усиленный воздушный поток", "Средне-высокий класс"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 410, maxRadiatorMm: 420 },
     offers: [
       {
         id: "case-h7-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 129.99,
         currency: "USD",
-        note: "NZXT 官方",
+        note: "Официальный магазин NZXT",
         url: "https://nzxt.com/en-US/product/h7-flow",
       },
     ],
@@ -873,14 +873,14 @@ const catalogParts: Part[] = [
     category: "case",
     name: "LANCOOL 216",
     brand: "Lian Li",
-    summary: "DIY 圈里很常见的风道机箱，适合高性能显卡和大尺寸风扇。",
-    tags: ["ATX", "风道", "双大风扇"],
+    summary: "Очень распространённый в DIY-сообществе корпус с хорошим воздушным потоком, подходящий для мощных видеокарт и крупных вентиляторов.",
+    tags: ["ATX", "Воздушный поток", "Два больших вентилятора"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 392, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-lancool216-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 99.99,
         currency: "USD",
         note: "Best Buy",
@@ -896,14 +896,14 @@ const extraParts: Part[] = [
     category: "cpu",
     name: "Ryzen 5 7600X",
     brand: "AMD",
-    summary: "热门六核 AM5 处理器，适合强调性价比的游戏装机。",
-    tags: ["AM5", "6 核", "105W"],
+    summary: "Популярный шестиядерный процессор AM5, подходящий для игровых сборок с упором на цену и производительность.",
+    tags: ["AM5", "6 ядер", "105W"],
     specs: { socket: "AM5", tdp: 105 },
     offers: [
       {
         id: "cpu-7600x-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 190.99,
         currency: "USD",
         note: "Best Buy",
@@ -916,14 +916,14 @@ const extraParts: Part[] = [
     category: "cpu",
     name: "Core i7-14700K",
     brand: "Intel",
-    summary: "高性能游戏与创作处理器，适合更高阶的 Intel 平台装机。",
-    tags: ["LGA1700", "20 核", "125W"],
+    summary: "Высокопроизводительный процессор для игр и творчества, подходящий для более продвинутых сборок на Intel.",
+    tags: ["LGA1700", "20 ядер", "125W"],
     specs: { socket: "LGA1700", tdp: 125 },
     offers: [
       {
         id: "cpu-14700k-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 403.74,
         currency: "USD",
         note: "Best Buy",
@@ -936,14 +936,14 @@ const extraParts: Part[] = [
     category: "cpu",
     name: "Ryzen 9 9900X",
     brand: "AMD",
-    summary: "面向高端创作和多任务的 12 核处理器，适合旗舰级整机。",
-    tags: ["AM5", "12 核", "120W"],
+    summary: "12-ядерный процессор для высокоуровневой работы и многозадачности, подходящий для флагманских систем.",
+    tags: ["AM5", "12 ядер", "120W"],
     specs: { socket: "AM5", tdp: 120 },
     offers: [
       {
         id: "cpu-9900x-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 439,
         currency: "USD",
         note: "Best Buy",
@@ -956,14 +956,14 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "B650 AORUS ELITE AX",
     brand: "Gigabyte",
-    summary: "热门 AM5 ATX 主板，适合 Ryzen 中高端装机。",
+    summary: "Популярная AM5 ATX-плата, хорошо подходящая для средне-высоких сборок на Ryzen.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b650-aorus-bestbuy",
         market: "bestbuy",
-        title: "当前在售",
+        title: "Текущая продажа",
         price: 149.99,
         currency: "USD",
         note: "Best Buy",
@@ -976,17 +976,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "RX 9060 XT 16GB GAMING OC",
     brand: "Gigabyte",
-    summary: "主流 AMD 显卡选择，适合预算更灵活的 1440p 方案。",
+    summary: "Популярный вариант видеокарты AMD, подходящий для более гибких по бюджету конфигураций в 1440p.",
     tags: ["16GB", "182W", "AMD"],
     specs: { boardPower: 182, lengthMm: 281 },
     offers: [
       {
         id: "gpu-rx9060xt-joybuy",
         market: "joybuy",
-        title: "活动快照",
+        title: "Снимок акционной цены",
         price: 399,
         currency: "GBP",
-        note: "Joybuy 活动页",
+        note: "Акционная страница Joybuy",
         url: "https://www.joybuy.co.uk/cms/unleash-the-ultimate-gaming-power",
       },
     ],
@@ -996,17 +996,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5080 16G GAMING TRIO OC",
     brand: "MSI",
-    summary: "更高档的 4K 级显卡，适合旗舰装机。",
-    tags: ["16GB", "360W", "旗舰"],
+    summary: "Видеокарта более высокого класса для 4K, подходящая для флагманских сборок.",
+    tags: ["16GB", "360W", "Флагман"],
     specs: { boardPower: 360, lengthMm: 338 },
     offers: [
       {
         id: "gpu-5080-msi-joybuy",
         market: "joybuy",
-        title: "活动快照",
+        title: "Снимок акционной цены",
         price: 1284.99,
         currency: "GBP",
-        note: "Joybuy 活动页",
+        note: "Акционная страница Joybuy",
         url: "https://www.joybuy.co.uk/cms/unleash-the-ultimate-gaming-power",
       },
     ],
@@ -1016,17 +1016,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "TUF-RTX 5080 O16G-GAMING",
     brand: "ASUS",
-    summary: "高端 TUF 系列显卡，适合高性能与稳重风格整机。",
+    summary: "Топовая видеокарта серии TUF, подходящая для мощных и строгих по стилю сборок.",
     tags: ["16GB", "360W", "TUF"],
     specs: { boardPower: 360, lengthMm: 348 },
     offers: [
       {
         id: "gpu-5080-asus-joybuy",
         market: "joybuy",
-        title: "活动快照",
+        title: "Снимок акционной цены",
         price: 1419.99,
         currency: "GBP",
-        note: "Joybuy 活动页",
+        note: "Акционная страница Joybuy",
         url: "https://www.joybuy.co.uk/cms/unleash-the-ultimate-gaming-power",
       },
     ],
@@ -1036,17 +1036,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "MP600 ELITE 2TB",
     brand: "Corsair",
-    summary: "Corsair 的主流 2TB PCIe 4.0 SSD，适合游戏库和日常创作。",
+    summary: "Популярный SSD PCIe 4.0 на 2TB от Corsair, подходящий для библиотеки игр и повседневной работы.",
     tags: ["2TB", "PCIe 4.0"],
     specs: { capacityTb: 2 },
     offers: [
       {
         id: "ssd-mp600elite-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 439.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/data-storage/cssd-f2000gbmp600enh/mp600-elite-2tb-pcie-gen4-x4-nvme-1-4-m-2-ssd-cssd-f2000gbmp600enh",
       },
     ],
@@ -1056,17 +1056,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "NAUTILUS 360 RS ARGB",
     brand: "Corsair",
-    summary: "更简洁的 Corsair 360 水冷，适合主流高性能装机。",
-    tags: ["360 水冷", "ARGB"],
+    summary: "Более лаконичная 360-мм СЖО Corsair, подходящая для массовых высокопроизводительных сборок.",
+    tags: ["360-мм СЖО", "ARGB"],
     specs: { supportedSockets: ["AM5", "LGA1700", "LGA1851"], radiatorMm: 360 },
     offers: [
       {
         id: "cooler-nautilus-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 129.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/cpu-coolers/cw-9060093-ww/nautilus-360-rs-argb-liquid-cpu-cooler-cw-9060093-ww",
       },
     ],
@@ -1076,17 +1076,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "RM750e",
     brand: "Corsair",
-    summary: "热门 750W 电源，适合 RTX 5070 与主流高性能整机。",
+    summary: "Популярный блок питания на 750W, подходящий для RTX 5070 и массовых производительных систем.",
     tags: ["750W", "ATX 3.1"],
     specs: { wattage: 750 },
     offers: [
       {
         id: "psu-rm750e-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 114.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/psu/cp-9020262-na/rme-series-rm750e-fully-modular-low-noise-atx-power-supply-cp-9020262-na",
       },
     ],
@@ -1096,17 +1096,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "RM1000e",
     brand: "Corsair",
-    summary: "为旗舰显卡和高功耗平台准备的 1000W 电源。",
+    summary: "Блок питания на 1000W для флагманских видеокарт и платформ с высоким энергопотреблением.",
     tags: ["1000W", "ATX 3.1"],
     specs: { wattage: 1000 },
     offers: [
       {
         id: "psu-rm1000e-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 189.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/psu/cp-9020250-na/rme-series-rm1000e-fully-modular-low-noise-atx-power-supply-cp-9020250-na",
       },
     ],
@@ -1116,17 +1116,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "H6 Flow",
     brand: "NZXT",
-    summary: "双仓结构风道机箱，适合展示型装机与更强的显卡散热。",
-    tags: ["ATX", "双仓", "高风道"],
+    summary: "Корпус с двухкамерной конструкцией и хорошим воздушным потоком, подходящий для демонстрационных сборок и лучшего охлаждения видеокарты.",
+    tags: ["ATX", "Двухкамерный", "Усиленный воздушный поток"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 365, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-h6-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 99.99,
         currency: "USD",
-        note: "NZXT 官方",
+        note: "Официальный магазин NZXT",
         url: "https://nzxt.com/en-US/product/h6-flow",
       },
     ],
@@ -1136,17 +1136,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "H9 Flow",
     brand: "NZXT",
-    summary: "更大的双仓全景机箱，适合旗舰散热和展示型整机。",
-    tags: ["ATX", "双仓", "旗舰"],
+    summary: "Более крупный панорамный двухкамерный корпус, подходящий для флагманского охлаждения и демонстрационных систем.",
+    tags: ["ATX", "Двухкамерный", "Флагман"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 435, maxRadiatorMm: 420 },
     offers: [
       {
         id: "case-h9-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 119.99,
         currency: "USD",
-        note: "NZXT 官方",
+        note: "Официальный магазин NZXT",
         url: "https://nzxt.com/en-US/product/h9-flow",
       },
     ],
@@ -1156,17 +1156,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "3500X ARGB",
     brand: "Corsair",
-    summary: "玻璃展示型机箱，适合白色主题与高颜值 RGB 装机。",
-    tags: ["ATX", "ARGB", "海景"],
+    summary: "Стеклянный демонстрационный корпус, подходящий для белых тематических и эффектных RGB-сборок.",
+    tags: ["ATX", "ARGB", "Панорамный"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 410, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-3500x-official",
         market: "official",
-        title: "品牌商城价",
+        title: "Цена фирменного магазина",
         price: 119.99,
         currency: "USD",
-        note: "Corsair 官方",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/p/pc-cases/cc-9011278-ww/3500x-argb-mid-tower-pc-case-cc-9011278-ww",
       },
     ],
@@ -1176,17 +1176,17 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "B650 Steel Legend WiFi",
     brand: "ASRock",
-    summary: "AM5 white-silver ATX motherboard for clean mid-range gaming and creator builds.",
+    summary: "Бело-серебристая ATX-плата AM5 для аккуратных игровых и рабочих сборок среднего уровня.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b650-steellegend-newegg",
         market: "amazon",
-        title: "market snapshot",
+        title: "Снимок цены на рынке",
         price: 189.99,
         currency: "USD",
-        note: "ASRock market snapshot",
+        note: "Снимок цены ASRock",
         url: "https://www.asrock.com/mb/AMD/B650%20Steel%20Legend%20WiFi/",
       },
     ],
@@ -1196,14 +1196,14 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "TUF Gaming B650-PLUS WIFI",
     brand: "ASUS",
-    summary: "Balanced AM5 ATX motherboard with strong power delivery and stable BIOS support.",
+    summary: "Сбалансированная AM5 ATX-плата с хорошим питанием и стабильной поддержкой BIOS.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b650-tufplus-bestbuy",
         market: "bestbuy",
-        title: "current listing",
+        title: "Текущее предложение",
         price: 219.99,
         currency: "USD",
         note: "Best Buy",
@@ -1216,17 +1216,17 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "X870 Eagle WIFI7",
     brand: "Gigabyte",
-    summary: "New-gen AM5 board for faster networking, higher memory ceilings, and premium builds.",
+    summary: "Плата нового поколения AM5 с более быстрыми сетевыми возможностями, лучшей поддержкой памяти и ориентацией на премиальные сборки.",
     tags: ["AM5", "ATX", "WiFi 7"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-x870-eagle-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 249.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=X870+Eagle+WIFI7",
       },
     ],
@@ -1236,17 +1236,17 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "Z890 Pro RS WiFi",
     brand: "ASRock",
-    summary: "Intel Core Ultra platform board aimed at creator and high-core desktop builds.",
+    summary: "Плата для платформы Intel Core Ultra, ориентированная на рабочие и многоядерные настольные сборки.",
     tags: ["LGA1851", "ATX", "DDR5"],
     specs: { socket: "LGA1851", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-z890-pro-rs-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 239.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Z890+Pro+RS+WiFi",
       },
     ],
@@ -1256,17 +1256,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "Radeon RX 7800 XT Pulse",
     brand: "Sapphire",
-    summary: "Trusted 1440p Radeon choice with strong raster performance and a quiet cooler.",
+    summary: "Надёжный вариант Radeon для 1440p с высокой обычной производительностью и тихой системой охлаждения.",
     tags: ["1440p", "16GB", "AMD"],
     specs: { performanceTier: "high", vramGb: 16, powerDraw: 263 },
     offers: [
       {
         id: "gpu-7800xt-sapphire-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 499.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Sapphire+RX+7800+XT+Pulse",
       },
     ],
@@ -1276,17 +1276,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "Radeon RX 9070 XT MERC",
     brand: "XFX",
-    summary: "High-end Radeon option for strong 1440p ultra and entry-level 4K gaming.",
+    summary: "Топовый вариант Radeon для уверенной игры в 1440p Ultra и начального уровня 4K.",
     tags: ["1440p Ultra", "16GB", "RDNA 4"],
     specs: { performanceTier: "flagship", vramGb: 16, powerDraw: 300 },
     offers: [
       {
         id: "gpu-9070xt-xfx-aliexpress",
         market: "aliexpress",
-        title: "platform snapshot",
+        title: "Снимок цены на площадке",
         price: 689.99,
         currency: "USD",
-        note: "AliExpress snapshot",
+        note: "Снимок AliExpress",
         url: "https://www.aliexpress.com/wholesale?SearchText=XFX+RX+9070+XT+MERC",
       },
     ],
@@ -1296,14 +1296,14 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5070 Twin Edge OC",
     brand: "ZOTAC",
-    summary: "Compact NVIDIA card for stronger ray tracing and cleaner small-case compatibility.",
-    tags: ["1440p", "12GB", "Compact"],
+    summary: "Компактная видеокарта NVIDIA с более сильным рейтрейсингом и лучшей совместимостью с небольшими корпусами.",
+    tags: ["1440p", "12GB", "Компактная"],
     specs: { performanceTier: "high", vramGb: 12, powerDraw: 250 },
     offers: [
       {
         id: "gpu-5070-zotac-bestbuy",
         market: "bestbuy",
-        title: "current listing",
+        title: "Текущее предложение",
         price: 649.99,
         currency: "USD",
         note: "Best Buy",
@@ -1316,17 +1316,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "GeForce RTX 5060 Ti VERTO Dual",
     brand: "PNY",
-    summary: "Mid-range NVIDIA option for esports and 1440p high settings on a tighter budget.",
-    tags: ["1080p+", "16GB", "Dual Fan"],
+    summary: "Видеокарта NVIDIA среднего уровня для киберспорта и 1440p на высоких настройках при более ограниченном бюджете.",
+    tags: ["1080p+", "16GB", "Два вентилятора"],
     specs: { performanceTier: "mid", vramGb: 16, powerDraw: 180 },
     offers: [
       {
         id: "gpu-5060ti-pny-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 449.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=PNY+RTX+5060+Ti+VERTO+Dual",
       },
     ],
@@ -1336,17 +1336,17 @@ const extraParts: Part[] = [
     category: "ram",
     name: "T-Force Delta RGB DDR5 32GB 6000",
     brand: "TeamGroup",
-    summary: "Popular RGB DDR5 kit for gaming builds that want speed and stronger visual flair.",
+    summary: "Популярный RGB-комплект DDR5 для игровых сборок, где важны и скорость, и более выразительный внешний вид.",
     tags: ["32GB", "DDR5-6000", "RGB"],
     specs: { capacityGb: 32, speed: 6000, memoryType: "DDR5" },
     offers: [
       {
         id: "ram-tforce-delta-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 109.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=T-Force+Delta+RGB+DDR5+32GB+6000",
       },
     ],
@@ -1356,17 +1356,17 @@ const extraParts: Part[] = [
     category: "ram",
     name: "XPG Lancer Blade DDR5 32GB 6000",
     brand: "ADATA",
-    summary: "Low-profile DDR5 kit that fits easier under larger air coolers and compact layouts.",
-    tags: ["32GB", "DDR5-6000", "Low Profile"],
+    summary: "Низкопрофильный комплект DDR5, который легче помещается под крупные воздушные кулеры и в компактные сборки.",
+    tags: ["32GB", "DDR5-6000", "Низкопрофильная"],
     specs: { capacityGb: 32, speed: 6000, memoryType: "DDR5" },
     offers: [
       {
         id: "ram-xpg-lancer-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 99.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=XPG+Lancer+Blade+DDR5+32GB+6000",
       },
     ],
@@ -1376,17 +1376,17 @@ const extraParts: Part[] = [
     category: "ram",
     name: "Viper Venom DDR5 32GB 6400",
     brand: "Patriot",
-    summary: "Higher-clocked DDR5 option for users who want extra headroom on capable platforms.",
-    tags: ["32GB", "DDR5-6400", "Performance"],
+    summary: "Более высокочастотный комплект DDR5 для пользователей, которым нужен дополнительный запас производительности на подходящих платформах.",
+    tags: ["32GB", "DDR5-6400", "Производительность"],
     specs: { capacityGb: 32, speed: 6400, memoryType: "DDR5" },
     offers: [
       {
         id: "ram-viper-venom-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 114.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Patriot+Viper+Venom+DDR5+32GB+6400",
       },
     ],
@@ -1396,17 +1396,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "MP44 2TB",
     brand: "TeamGroup",
-    summary: "Great-value PCIe 4.0 SSD for game libraries and fast everyday workstation use.",
-    tags: ["2TB", "PCIe 4.0", "Value"],
+    summary: "Выгодный SSD PCIe 4.0 для библиотек игр и быстрой повседневной работы.",
+    tags: ["2TB", "PCIe 4.0", "Выгодно"],
     specs: { capacityTb: 2, interface: "PCIe 4.0" },
     offers: [
       {
         id: "ssd-mp44-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 129.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=TeamGroup+MP44+2TB",
       },
     ],
@@ -1416,17 +1416,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "XPG Gammix S70 Blade 2TB",
     brand: "ADATA",
-    summary: "Fast PCIe 4.0 SSD with a thin heatsink, useful for desktops and shared console use.",
-    tags: ["2TB", "PCIe 4.0", "Thin Heatsink"],
+    summary: "Быстрый SSD PCIe 4.0 с тонким радиатором, полезный для настольных ПК и совместного использования с консолями.",
+    tags: ["2TB", "PCIe 4.0", "Тонкий радиатор"],
     specs: { capacityTb: 2, interface: "PCIe 4.0" },
     offers: [
       {
         id: "ssd-s70-blade-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 139.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=XPG+Gammix+S70+Blade+2TB",
       },
     ],
@@ -1436,17 +1436,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "Platinum P41 2TB",
     brand: "SK hynix",
-    summary: "Premium PCIe 4.0 SSD known for high sustained performance and strong efficiency.",
-    tags: ["2TB", "PCIe 4.0", "Premium"],
+    summary: "Премиальный SSD PCIe 4.0, известный высокой стабильной производительностью и хорошей энергоэффективностью.",
+    tags: ["2TB", "PCIe 4.0", "Премиум"],
     specs: { capacityTb: 2, interface: "PCIe 4.0" },
     offers: [
       {
         id: "ssd-p41-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 154.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=SK+hynix+Platinum+P41+2TB",
       },
     ],
@@ -1456,17 +1456,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "AK620 Digital",
     brand: "DeepCool",
-    summary: "Dual-tower air cooler for mainstream gaming CPUs that prefer clean acoustics over AIOs.",
-    tags: ["Air", "Dual Tower", "AM5"],
+    summary: "Двухбашенный воздушный кулер для массовых игровых CPU, подходящий тем, кто предпочитает тихую работу вместо СЖО.",
+    tags: ["Воздушный", "Двухбашенный", "AM5"],
     specs: { coolerType: "air", maxRadiatorMm: 0 },
     offers: [
       {
         id: "cooler-ak620-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 79.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=DeepCool+AK620+Digital",
       },
     ],
@@ -1476,17 +1476,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "Pure Loop 2 FX 360",
     brand: "be quiet!",
-    summary: "Quiet 360mm AIO for high-core CPUs and users who want lower noise under load.",
-    tags: ["360mm", "AIO", "Quiet"],
+    summary: "Тихая 360-мм СЖО для многоядерных CPU и пользователей, которым нужен более низкий уровень шума под нагрузкой.",
+    tags: ["360mm", "СЖО", "Тихая"],
     specs: { coolerType: "liquid", maxRadiatorMm: 360 },
     offers: [
       {
         id: "cooler-pureloop-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 149.9,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Pure+Loop+2+FX+360",
       },
     ],
@@ -1496,17 +1496,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "Hyper 622 Halo",
     brand: "Cooler Master",
-    summary: "RGB twin-tower cooler that works well for balanced gaming builds and glass-panel cases.",
-    tags: ["Air", "ARGB", "Dual Tower"],
+    summary: "RGB-кулер с двумя башнями, хорошо подходящий для сбалансированных игровых сборок и корпусов со стеклянной боковой панелью.",
+    tags: ["Воздушный", "ARGB", "Двухбашенный"],
     specs: { coolerType: "air", maxRadiatorMm: 0 },
     offers: [
       {
         id: "cooler-hyper622-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 59.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Hyper+622+Halo",
       },
     ],
@@ -1516,17 +1516,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "FOCUS GX-850",
     brand: "Seasonic",
-    summary: "Reliable 850W gold PSU with enough headroom for high-end GPUs and future upgrades.",
+    summary: "Надёжный блок питания 850W уровня Gold с достаточным запасом для топовых видеокарт и будущих апгрейдов.",
     tags: ["850W", "ATX 3.0", "Gold"],
     specs: { wattage: 850 },
     offers: [
       {
         id: "psu-focus-gx850-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 149.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Seasonic+FOCUS+GX-850",
       },
     ],
@@ -1536,17 +1536,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "Pure Power 12 M 750W",
     brand: "be quiet!",
-    summary: "ATX 3.x-ready PSU for quieter mid-to-high-end builds with modern GPU connectors.",
-    tags: ["750W", "ATX 3.x", "Quiet"],
+    summary: "Блок питания с поддержкой ATX 3.x для более тихих сборок среднего и высокого уровня с современными разъёмами для видеокарт.",
+    tags: ["750W", "ATX 3.x", "Тихий"],
     specs: { wattage: 750 },
     offers: [
       {
         id: "psu-purepower12m-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 119.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Pure+Power+12+M+750W",
       },
     ],
@@ -1556,17 +1556,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "MWE Gold 850 V3",
     brand: "Cooler Master",
-    summary: "Simple high-value 850W option for stronger GPU upgrades without overspending.",
-    tags: ["850W", "Gold", "Value"],
+    summary: "Простой и выгодный блок питания на 850W для более мощных апгрейдов видеокарты без лишних переплат.",
+    tags: ["850W", "Gold", "Выгодно"],
     specs: { wattage: 850 },
     offers: [
       {
         id: "psu-mwe850v3-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 109.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=MWE+Gold+850+V3",
       },
     ],
@@ -1576,17 +1576,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "North",
     brand: "Fractal Design",
-    summary: "Highly popular airflow case with a warmer furniture-inspired front-panel look.",
-    tags: ["ATX", "Airflow", "Wood Front"],
+    summary: "Очень популярный корпус с хорошим воздушным потоком и более тёплым дизайном передней панели в мебельном стиле.",
+    tags: ["ATX", "Воздушный поток", "Деревянная передняя панель"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 355, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-fractal-north-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 139.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Fractal+North",
       },
     ],
@@ -1596,17 +1596,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "AIR 903 MAX",
     brand: "Montech",
-    summary: "Roomy airflow mid-tower with strong fan value for practical gaming-first builds.",
-    tags: ["ATX", "Airflow", "Value"],
+    summary: "Просторный корпус среднего размера с хорошим воздушным потоком и выгодной комплектацией вентиляторами для практичных игровых сборок.",
+    tags: ["ATX", "Воздушный поток", "Выгодно"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 400, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-air903-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 74.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Montech+AIR+903+MAX",
       },
     ],
@@ -1616,17 +1616,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "Y40",
     brand: "HYTE",
-    summary: "Showcase case built for panoramic side views and stronger visual presentation.",
-    tags: ["ATX", "Showcase", "Panoramic"],
+    summary: "Демонстрационный корпус, созданный для панорамного обзора и более эффектной визуальной подачи.",
+    tags: ["ATX", "Демонстрационный", "Панорамный"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 422, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-y40-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 129.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=HYTE+Y40",
       },
     ],
@@ -1636,17 +1636,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "XT Pro Ultra",
     brand: "Phanteks",
-    summary: "Clean high-airflow chassis with flexible radiator support and easier cable room.",
-    tags: ["ATX", "Airflow", "Builder Friendly"],
+    summary: "Аккуратный корпус с высоким воздушным потоком, гибкой поддержкой радиаторов и более удобным пространством для кабелей.",
+    tags: ["ATX", "Воздушный поток", "Удобный для сборки"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 415, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-xtpro-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 89.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Phanteks+XT+Pro+Ultra",
       },
     ],
@@ -1656,14 +1656,14 @@ const extraParts: Part[] = [
     category: "cpu",
     name: "Core Ultra 9 285K",
     brand: "Intel",
-    summary: "Top-end Core Ultra desktop CPU for heavy creation, streaming, and flagship hybrid builds.",
-    tags: ["LGA1851", "24 Cores", "125W"],
+    summary: "Топовый настольный процессор Core Ultra для тяжёлой работы, стриминга и флагманских гибридных сборок.",
+    tags: ["LGA1851", "24 ядра", "125W"],
     specs: { socket: "LGA1851", tdp: 125 },
     offers: [
       {
         id: "cpu-285k-bestbuy",
         market: "bestbuy",
-        title: "current listing",
+        title: "Текущее предложение",
         price: 589.99,
         currency: "USD",
         note: "Best Buy",
@@ -1676,17 +1676,17 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "N7 B650E",
     brand: "NZXT",
-    summary: "Clean-cover AM5 motherboard for white or minimal builds that care about visual consistency.",
+    summary: "Материнская плата AM5 с цельным аккуратным дизайном для белых или минималистичных сборок, где важна визуальная целостность.",
     tags: ["AM5", "ATX", "DDR5"],
     specs: { socket: "AM5", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-n7-b650e-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 269.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=NZXT+N7+B650E",
       },
     ],
@@ -1696,17 +1696,17 @@ const extraParts: Part[] = [
     category: "motherboard",
     name: "ROG Strix B860-F Gaming WiFi",
     brand: "ASUS",
-    summary: "Upper-mid Intel board for newer Core Ultra builds with a stronger feature set and styling.",
+    summary: "Материнская плата Intel среднего-высокого уровня для новых сборок на Core Ultra с более богатым набором функций и выразительным дизайном.",
     tags: ["LGA1851", "ATX", "DDR5"],
     specs: { socket: "LGA1851", formFactor: "ATX", memoryType: "DDR5" },
     offers: [
       {
         id: "mobo-b860-strix-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 259.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=ROG+Strix+B860-F+Gaming+WiFi",
       },
     ],
@@ -1716,17 +1716,17 @@ const extraParts: Part[] = [
     category: "gpu",
     name: "Radeon RX 9070 XT Hellhound",
     brand: "PowerColor",
-    summary: "Well-known Radeon partner card aimed at high-refresh 1440p and entry 4K play.",
+    summary: "Известная партнёрская версия Radeon, рассчитанная на 1440p с высокой частотой и начальный уровень 4K.",
     tags: ["1440p Ultra", "16GB", "AMD"],
     specs: { performanceTier: "flagship", vramGb: 16, powerDraw: 304 },
     offers: [
       {
         id: "gpu-9070xt-powercolor-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 699.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=PowerColor+RX+9070+XT+Hellhound",
       },
     ],
@@ -1736,17 +1736,17 @@ const extraParts: Part[] = [
     category: "ram",
     name: "Dominator Titanium RGB DDR5 32GB 6400",
     brand: "Corsair",
-    summary: "Premium RGB DDR5 kit for showcase builds and higher-clocked gaming setups.",
-    tags: ["32GB", "DDR5-6400", "Premium RGB"],
+    summary: "Премиальный RGB-комплект DDR5 для демонстрационных сборок и игровых систем с более высокой частотой памяти.",
+    tags: ["32GB", "DDR5-6400", "Премиум RGB"],
     specs: { capacityGb: 32, speed: 6400, memoryType: "DDR5" },
     offers: [
       {
         id: "ram-dominator-titanium-official",
         market: "official",
-        title: "brand store",
+        title: "Фирменный магазин",
         price: 174.99,
         currency: "USD",
-        note: "Corsair official",
+        note: "Официальный магазин Corsair",
         url: "https://www.corsair.com/us/en/s/dominator-titanium-ddr5-memory",
       },
     ],
@@ -1756,17 +1756,17 @@ const extraParts: Part[] = [
     category: "ram",
     name: "ARES RGB DDR5 32GB 6400",
     brand: "Lexar",
-    summary: "Fast RGB DDR5 kit suited to users who want higher clocks and a slimmer module profile.",
+    summary: "Быстрый RGB-комплект DDR5 для пользователей, которым нужны более высокие частоты и более компактный профиль модулей.",
     tags: ["32GB", "DDR5-6400", "RGB"],
     specs: { capacityGb: 32, speed: 6400, memoryType: "DDR5" },
     offers: [
       {
         id: "ram-ares-rgb-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 119.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Lexar+ARES+RGB+DDR5+32GB+6400",
       },
     ],
@@ -1776,17 +1776,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "FireCuda 530R 2TB",
     brand: "Seagate",
-    summary: "High-end PCIe 4.0 SSD tuned for heavier game libraries and sustained transfer work.",
-    tags: ["2TB", "PCIe 4.0", "High End"],
+    summary: "Высококлассный SSD PCIe 4.0, настроенный для больших игровых библиотек и длительных операций передачи данных.",
+    tags: ["2TB", "PCIe 4.0", "Высокий класс"],
     specs: { capacityTb: 2, interface: "PCIe 4.0" },
     offers: [
       {
         id: "ssd-firecuda530r-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 169.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=FireCuda+530R+2TB",
       },
     ],
@@ -1796,17 +1796,17 @@ const extraParts: Part[] = [
     category: "ssd",
     name: "P44 Pro 2TB",
     brand: "Solidigm",
-    summary: "Fast premium SSD with strong random performance for game-heavy and workstation use.",
-    tags: ["2TB", "PCIe 4.0", "Premium"],
+    summary: "Быстрый премиальный SSD с высокой случайной производительностью для игровых и рабочих сценариев.",
+    tags: ["2TB", "PCIe 4.0", "Премиум"],
     specs: { capacityTb: 2, interface: "PCIe 4.0" },
     offers: [
       {
         id: "ssd-p44pro-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 159.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Solidigm+P44+Pro+2TB",
       },
     ],
@@ -1816,17 +1816,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "Liquid Freezer III 360",
     brand: "Arctic",
-    summary: "AIO favorite for excellent thermal performance and good value on higher-power CPUs.",
-    tags: ["360mm", "AIO", "High Performance"],
+    summary: "Популярная СЖО с отличной тепловой эффективностью и хорошей ценностью для более мощных CPU.",
+    tags: ["360mm", "СЖО", "Высокая производительность"],
     specs: { coolerType: "liquid", maxRadiatorMm: 360 },
     offers: [
       {
         id: "cooler-liquid-freezer-iii-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 139.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Arctic+Liquid+Freezer+III+360",
       },
     ],
@@ -1836,17 +1836,17 @@ const extraParts: Part[] = [
     category: "cooler",
     name: "Phantom Spirit 120 SE",
     brand: "Thermalright",
-    summary: "Excellent-value dual-tower air cooler that is still widely recommended for gaming CPUs.",
-    tags: ["Air", "Dual Tower", "Value"],
+    summary: "Очень выгодный двухбашенный воздушный кулер, который до сих пор широко рекомендуют для игровых процессоров.",
+    tags: ["Воздушный", "Двухбашенный", "Выгодно"],
     specs: { coolerType: "air", maxRadiatorMm: 0 },
     offers: [
       {
         id: "cooler-phantom-spirit-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 37.9,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Thermalright+Phantom+Spirit+120+SE",
       },
     ],
@@ -1856,17 +1856,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "Leadex VII XG 1000W",
     brand: "Super Flower",
-    summary: "High-capacity gold PSU with strong reputation for flagship GPU and future-proof upgrades.",
+    summary: "Мощный блок питания уровня Gold с сильной репутацией для флагманских видеокарт и будущих апгрейдов.",
     tags: ["1000W", "ATX 3.1", "Gold"],
     specs: { wattage: 1000 },
     offers: [
       {
         id: "psu-leadex-vii-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 189.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Super+Flower+Leadex+VII+XG+1000W",
       },
     ],
@@ -1876,17 +1876,17 @@ const extraParts: Part[] = [
     category: "psu",
     name: "Toughpower GF A3 850W",
     brand: "Thermaltake",
-    summary: "Modern ATX 3-ready PSU for high-end gaming builds that still want sensible pricing.",
+    summary: "Современный блок питания с поддержкой ATX 3 для игровых сборок высокого уровня с разумной ценой.",
     tags: ["850W", "ATX 3.0", "Gold"],
     specs: { wattage: 850 },
     offers: [
       {
         id: "psu-toughpower-gfa3-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 124.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Toughpower+GF+A3+850W",
       },
     ],
@@ -1896,17 +1896,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "C8",
     brand: "Antec",
-    summary: "Dual-chamber panoramic case for showcase builds with long GPUs and multiple radiators.",
-    tags: ["ATX", "Panoramic", "Dual Chamber"],
+    summary: "Панорамный двухкамерный корпус для демонстрационных сборок с длинными видеокартами и несколькими радиаторами.",
+    tags: ["ATX", "Панорамный", "Двухкамерный"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 440, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-c8-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 109.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=Antec+C8",
       },
     ],
@@ -1916,17 +1916,17 @@ const extraParts: Part[] = [
     category: "case",
     name: "Light Base 600 LX",
     brand: "be quiet!",
-    summary: "Premium showcase chassis for quieter high-end systems with lots of cooling flexibility.",
-    tags: ["ATX", "Showcase", "Premium"],
+    summary: "Премиальный демонстрационный корпус для более тихих систем высокого уровня с широкой гибкостью охлаждения.",
+    tags: ["ATX", "Демонстрационный", "Премиум"],
     specs: { supportedFormFactors: ["ATX", "mATX", "Mini-ITX"], maxGpuLengthMm: 400, maxRadiatorMm: 360 },
     offers: [
       {
         id: "case-lightbase-600-amazon",
         market: "amazon",
-        title: "price snapshot",
+        title: "Снимок цены",
         price: 169.99,
         currency: "USD",
-        note: "Amazon snapshot",
+        note: "Снимок Amazon",
         url: "https://www.amazon.com/s?k=be+quiet+Light+Base+600+LX",
       },
     ],
@@ -1954,7 +1954,7 @@ const parts: Part[] = [...catalogParts, ...extraParts].map((part) => ({
 const presets: Preset[] = [
   {
     id: "balanced",
-    name: "主流均衡型",
+    name: "Сбалансированная массовая сборка",
     parts: {
       cpu: "cpu-9600",
       motherboard: "mobo-colorful-b650me",
@@ -1968,7 +1968,7 @@ const presets: Preset[] = [
   },
   {
     id: "amd-premium",
-    name: "AMD 高配型",
+    name: "Мощная сборка AMD",
     parts: {
       cpu: "cpu-9800x3d",
       motherboard: "mobo-b850",
@@ -1982,7 +1982,7 @@ const presets: Preset[] = [
   },
   {
     id: "intel-builder",
-    name: "Intel 创作型",
+    name: "Творческая сборка Intel",
     parts: {
       cpu: "cpu-14600k",
       motherboard: "mobo-z790",
@@ -2005,35 +2005,34 @@ const toGbp = (price: number, currency: Offer["currency"]) => {
   if (currency === "EUR") return price * eurToGbp;
   return price;
 };
-
 const fmt = (price: number, currency: Offer["currency"]) =>
-  new Intl.NumberFormat("en-GB", { style: "currency", currency }).format(price);
+    new Intl.NumberFormat("en-GB", { style: "currency", currency }).format(price);
 
 const gbp = (price: number) =>
-  new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(price);
+    new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(price);
 
 const byCategory = (categoryId: CategoryId) => parts.filter((part) => part.category === categoryId);
 const brandsForCategory = (categoryId: CategoryId) =>
-  [...new Set(byCategory(categoryId).map((part) => part.brand))].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
+    [...new Set(byCategory(categoryId).map((part) => part.brand))].sort((a, b) => a.localeCompare(b, "en", { sensitivity: "base" }));
 
 const cheapest = (part: Part) =>
-  [...part.offers].sort((a, b) => toGbp(a.price, a.currency) - toGbp(b.price, b.currency))[0];
+    [...part.offers].sort((a, b) => toGbp(a.price, a.currency) - toGbp(b.price, b.currency))[0];
 
 const chosenOffer = (part: Part, offerId?: string) =>
-  part.offers.find((offer) => offer.id === offerId) ?? cheapest(part);
+    part.offers.find((offer) => offer.id === offerId) ?? cheapest(part);
 
 const offerMapFrom = (selected: Record<CategoryId, string>) =>
-  Object.fromEntries(
-    Object.entries(selected).map(([categoryId, partId]) => [categoryId, cheapest(partsById.get(partId)!).id])
-  ) as Record<CategoryId, string>;
+    Object.fromEntries(
+        Object.entries(selected).map(([categoryId, partId]) => [categoryId, cheapest(partsById.get(partId)!).id])
+    ) as Record<CategoryId, string>;
 
 const brandMapFrom = (selected: Record<CategoryId, string>) =>
-  Object.fromEntries(
-    categories.map((category) => [
-      category.id,
-      partsById.get(selected[category.id])?.brand ?? brandsForCategory(category.id)[0] ?? "",
-    ])
-  ) as Record<CategoryId, string>;
+    Object.fromEntries(
+        categories.map((category) => [
+          category.id,
+          partsById.get(selected[category.id])?.brand ?? brandsForCategory(category.id)[0] ?? "",
+        ])
+    ) as Record<CategoryId, string>;
 
 const cpuTierMap: Record<string, number> = {
   "cpu-9600": 66,
@@ -2069,17 +2068,17 @@ const clamp = (value: number, min: number, max: number) => Math.min(max, Math.ma
 const ramCapacityFrom = (part: Part) => Number(part.name.match(/(\d+)\s*GB/i)?.[1] ?? 32);
 const fpsRange = (center: number, spread: number) => `${Math.round(clamp(center - spread, 28, 420))}-${Math.round(clamp(center + spread, 32, 460))} FPS`;
 const qualityLabel = (value: number) => {
-  if (value >= 92) return "极高 / 最高";
-  if (value >= 78) return "高";
-  if (value >= 64) return "中高";
-  return "中";
+  if (value >= 92) return "Очень высокие / Максимальные";
+  if (value >= 78) return "Высокие";
+  if (value >= 64) return "Средне-высокие";
+  return "Средние";
 };
 
 const performanceTier = (value: number) => {
-  if (value >= 92) return "非常流畅";
-  if (value >= 78) return "流畅";
-  if (value >= 64) return "可流畅游玩";
-  return "建议适当降画质";
+  if (value >= 92) return "Очень плавно";
+  if (value >= 78) return "Плавно";
+  if (value >= 64) return "Играть комфортно";
+  return "Рекомендуется немного снизить настройки графики";
 };
 
 export default function Home() {
@@ -2091,11 +2090,11 @@ export default function Home() {
   const isCustomBuild = JSON.stringify(selectedParts) !== JSON.stringify(activePreset.parts);
 
   const selectedPartRecord = Object.fromEntries(
-    categories.map((category) => [category.id, partsById.get(selectedParts[category.id])!])
+      categories.map((category) => [category.id, partsById.get(selectedParts[category.id])!])
   ) as Record<CategoryId, Part>;
 
   const selectedOfferRecord = Object.fromEntries(
-    categories.map((category) => [category.id, chosenOffer(selectedPartRecord[category.id], selectedOffers[category.id])])
+      categories.map((category) => [category.id, chosenOffer(selectedPartRecord[category.id], selectedOffers[category.id])])
   ) as Record<CategoryId, Offer>;
 
   const selectedLinkGroups = categories.map((category) => ({
@@ -2116,47 +2115,47 @@ export default function Home() {
 
   const gameEstimates = [
     {
-      title: "主流竞技网游",
+      title: "Популярные соревновательные онлайн-игры",
       summary: "CS2 / Valorant / Apex / LoL",
       fps: fpsRange(esportsScore * 2.35, 24),
       quality: qualityLabel(esportsScore),
-      resolution: esportsScore >= 82 ? "1080p 高到极高，1440p 也较稳" : "1080p 中高到高",
+      resolution: esportsScore >= 82 ? "1080p — от высоких до максимальных, 1440p тоже достаточно стабильно" : "1080p — от средне-высоких до высоких",
       smoothness: performanceTier(esportsScore),
     },
     {
-      title: "常见 3A 游戏",
-      summary: "黑神话 / 赛博朋克 / 地平线 / 荒野大镖客 2",
+      title: "Популярные AAA-игры",
+      summary: "Black Myth / Cyberpunk / Horizon / Red Dead Redemption 2",
       fps: fpsRange(aaaScore * 1.18, 12),
       quality: qualityLabel(aaaScore),
-      resolution: aaaScore >= 86 ? "1440p 高画质" : aaaScore >= 72 ? "1080p 极高或 1440p 中高" : "1080p 中高",
+      resolution: aaaScore >= 86 ? "1440p на высоких настройках" : aaaScore >= 72 ? "1080p на максимальных или 1440p на средне-высоких" : "1080p на средне-высоких",
       smoothness: performanceTier(aaaScore),
     },
     {
-      title: "Steam 重度 3A",
-      summary: "星空 / Alan Wake 2 / 龙之信条 2 / 城市天际线 2",
+      title: "Тяжёлые AAA-игры из Steam",
+      summary: "Starfield / Alan Wake 2 / Dragon’s Dogma 2 / Cities: Skylines 2",
       fps: fpsRange(heavyAaaScore * 0.92, 10),
       quality: qualityLabel(heavyAaaScore),
-      resolution: heavyAaaScore >= 88 ? "1440p 高画质，必要时开 DLSS/FSR" : "1080p 高或 1440p 中",
+      resolution: heavyAaaScore >= 88 ? "1440p на высоких настройках, при необходимости включить DLSS/FSR" : "1080p на высоких или 1440p на средних",
       smoothness: performanceTier(heavyAaaScore),
     },
   ];
 
   const buildHighlights = [
-    `CPU / GPU 组合强度：${performanceTier(clamp((cpuTier + gpuTier) / 2, 40, 100))}`,
-    `${ramGb}GB DDR5 内存适合当前主流游戏与多任务`,
-    `${storageTb}TB SSD 适合系统盘 + 常玩游戏库`,
+    `Уровень связки CPU / GPU: ${performanceTier(clamp((cpuTier + gpuTier) / 2, 40, 100))}`,
+    `${ramGb}GB DDR5 памяти подходят для современных игр и многозадачности`,
+    `${storageTb}TB SSD подходят для системы и библиотеки часто запускаемых игр`,
   ];
 
   const defaultParts = presets[0].parts;
   const defaultOfferMap = offerMapFrom(defaultParts);
   const cheapestOfferMap = Object.fromEntries(
-    categories.map((category) => [category.id, cheapest(selectedPartRecord[category.id]).id])
+      categories.map((category) => [category.id, cheapest(selectedPartRecord[category.id]).id])
   ) as Record<CategoryId, string>;
 
   const canResetToDefault =
-    JSON.stringify(selectedParts) !== JSON.stringify(defaultParts) ||
-    JSON.stringify(selectedOffers) !== JSON.stringify(defaultOfferMap) ||
-    presetId !== presets[0].id;
+      JSON.stringify(selectedParts) !== JSON.stringify(defaultParts) ||
+      JSON.stringify(selectedOffers) !== JSON.stringify(defaultOfferMap) ||
+      presetId !== presets[0].id;
 
   const canSwitchToCheapest = JSON.stringify(selectedOffers) !== JSON.stringify(cheapestOfferMap);
 
@@ -2171,76 +2170,76 @@ export default function Home() {
     {
       status: String(selectedPartRecord.cpu.specs.socket) === String(selectedPartRecord.motherboard.specs.socket) ? "pass" : "fail",
       text:
-        String(selectedPartRecord.cpu.specs.socket) === String(selectedPartRecord.motherboard.specs.socket)
-          ? `CPU 与主板插槽匹配：${String(selectedPartRecord.cpu.specs.socket)}`
-          : `CPU ${String(selectedPartRecord.cpu.specs.socket)} 与主板 ${String(selectedPartRecord.motherboard.specs.socket)} 不匹配`,
+          String(selectedPartRecord.cpu.specs.socket) === String(selectedPartRecord.motherboard.specs.socket)
+              ? `Сокет CPU и материнской платы совпадает: ${String(selectedPartRecord.cpu.specs.socket)}`
+              : `CPU ${String(selectedPartRecord.cpu.specs.socket)} не совместим с материнской платой ${String(selectedPartRecord.motherboard.specs.socket)}`,
     },
     {
       status:
-        String(selectedPartRecord.ram.specs.memoryType) === String(selectedPartRecord.motherboard.specs.memoryType)
-          ? "pass"
-          : "fail",
+          String(selectedPartRecord.ram.specs.memoryType) === String(selectedPartRecord.motherboard.specs.memoryType)
+              ? "pass"
+              : "fail",
       text:
-        String(selectedPartRecord.ram.specs.memoryType) === String(selectedPartRecord.motherboard.specs.memoryType)
-          ? `内存代际匹配：${String(selectedPartRecord.ram.specs.memoryType)}`
-          : `主板要求 ${String(selectedPartRecord.motherboard.specs.memoryType)}，当前内存为 ${String(selectedPartRecord.ram.specs.memoryType)}`,
+          String(selectedPartRecord.ram.specs.memoryType) === String(selectedPartRecord.motherboard.specs.memoryType)
+              ? `Поколение памяти совпадает: ${String(selectedPartRecord.ram.specs.memoryType)}`
+              : `Материнская плата требует ${String(selectedPartRecord.motherboard.specs.memoryType)}, а текущая память — ${String(selectedPartRecord.ram.specs.memoryType)}`,
     },
     {
       status:
-        (selectedPartRecord.cooler.specs.supportedSockets as string[]).includes(String(selectedPartRecord.cpu.specs.socket))
-          ? "pass"
-          : "fail",
+          (selectedPartRecord.cooler.specs.supportedSockets as string[]).includes(String(selectedPartRecord.cpu.specs.socket))
+              ? "pass"
+              : "fail",
       text:
-        (selectedPartRecord.cooler.specs.supportedSockets as string[]).includes(String(selectedPartRecord.cpu.specs.socket))
-          ? `散热器支持 ${String(selectedPartRecord.cpu.specs.socket)}`
-          : `散热器未声明支持 ${String(selectedPartRecord.cpu.specs.socket)}`,
+          (selectedPartRecord.cooler.specs.supportedSockets as string[]).includes(String(selectedPartRecord.cpu.specs.socket))
+              ? `Кулер поддерживает ${String(selectedPartRecord.cpu.specs.socket)}`
+              : `У кулера не указана поддержка ${String(selectedPartRecord.cpu.specs.socket)}`,
     },
     {
       status:
-        (selectedPartRecord.case.specs.supportedFormFactors as string[]).includes(
-          String(selectedPartRecord.motherboard.specs.formFactor)
-        )
-          ? "pass"
-          : "fail",
+          (selectedPartRecord.case.specs.supportedFormFactors as string[]).includes(
+              String(selectedPartRecord.motherboard.specs.formFactor)
+          )
+              ? "pass"
+              : "fail",
       text:
-        (selectedPartRecord.case.specs.supportedFormFactors as string[]).includes(
-          String(selectedPartRecord.motherboard.specs.formFactor)
-        )
-          ? `机箱支持 ${String(selectedPartRecord.motherboard.specs.formFactor)} 主板`
-          : `机箱不支持 ${String(selectedPartRecord.motherboard.specs.formFactor)} 主板`,
+          (selectedPartRecord.case.specs.supportedFormFactors as string[]).includes(
+              String(selectedPartRecord.motherboard.specs.formFactor)
+          )
+              ? `Корпус поддерживает материнскую плату формата ${String(selectedPartRecord.motherboard.specs.formFactor)}`
+              : `Корпус не поддерживает материнскую плату формата ${String(selectedPartRecord.motherboard.specs.formFactor)}`,
     },
     {
       status: Number(selectedPartRecord.case.specs.maxGpuLengthMm) >= Number(selectedPartRecord.gpu.specs.lengthMm) ? "pass" : "warn",
       text:
-        Number(selectedPartRecord.case.specs.maxGpuLengthMm) >= Number(selectedPartRecord.gpu.specs.lengthMm)
-          ? `显卡长度 ${Number(selectedPartRecord.gpu.specs.lengthMm)}mm 在机箱范围内`
-          : "显卡长度接近机箱上限，建议再核对具体安装空间",
+          Number(selectedPartRecord.case.specs.maxGpuLengthMm) >= Number(selectedPartRecord.gpu.specs.lengthMm)
+              ? `Длина видеокарты ${Number(selectedPartRecord.gpu.specs.lengthMm)} мм укладывается в допустимые размеры корпуса`
+              : "Длина видеокарты близка к пределу корпуса, рекомендуется дополнительно проверить реальное пространство для установки",
     },
     {
       status:
-        Number(selectedPartRecord.case.specs.maxRadiatorMm) >= Number(selectedPartRecord.cooler.specs.radiatorMm)
-          ? "pass"
-          : "warn",
+          Number(selectedPartRecord.case.specs.maxRadiatorMm) >= Number(selectedPartRecord.cooler.specs.radiatorMm)
+              ? "pass"
+              : "warn",
       text:
-        Number(selectedPartRecord.case.specs.maxRadiatorMm) >= Number(selectedPartRecord.cooler.specs.radiatorMm)
-          ? `机箱可容纳 ${Number(selectedPartRecord.cooler.specs.radiatorMm)}mm 冷排`
-          : `请再确认机箱是否支持 ${Number(selectedPartRecord.cooler.specs.radiatorMm)}mm 冷排`,
+          Number(selectedPartRecord.case.specs.maxRadiatorMm) >= Number(selectedPartRecord.cooler.specs.radiatorMm)
+              ? `Корпус вмещает радиатор ${Number(selectedPartRecord.cooler.specs.radiatorMm)} мм`
+              : `Нужно дополнительно проверить, поддерживает ли корпус радиатор ${Number(selectedPartRecord.cooler.specs.radiatorMm)} мм`,
     },
     {
       status:
-        Number(selectedPartRecord.psu.specs.wattage) >=
-        Number(selectedPartRecord.cpu.specs.tdp) +
+          Number(selectedPartRecord.psu.specs.wattage) >=
+          Number(selectedPartRecord.cpu.specs.tdp) +
           Number(selectedPartRecord.gpu.specs.boardPower) +
           180
-          ? "pass"
-          : "warn",
+              ? "pass"
+              : "warn",
       text:
-        Number(selectedPartRecord.psu.specs.wattage) >=
-        Number(selectedPartRecord.cpu.specs.tdp) +
+          Number(selectedPartRecord.psu.specs.wattage) >=
+          Number(selectedPartRecord.cpu.specs.tdp) +
           Number(selectedPartRecord.gpu.specs.boardPower) +
           180
-          ? `电源 ${Number(selectedPartRecord.psu.specs.wattage)}W 留有一定余量`
-          : "建议再提高电源瓦数，给显卡与瞬时峰值留更多空间",
+              ? `Блок питания ${Number(selectedPartRecord.psu.specs.wattage)}W имеет разумный запас мощности`
+              : "Рекомендуется увеличить мощность блока питания, чтобы оставить больше запаса для видеокарты и пиковых нагрузок",
     },
   ];
 
@@ -2270,501 +2269,501 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,107,53,0.22),transparent_22rem),radial-gradient(circle_at_top_right,rgba(139,224,210,0.18),transparent_24rem),linear-gradient(180deg,#07111f_0%,#0a1728_48%,#08111d_100%)] text-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
-      <div className="mx-auto flex w-[min(calc(100%-20px),1400px)] flex-col gap-5 py-5 md:w-[min(calc(100%-32px),1400px)] md:py-7">
-        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,420px)]">
-          <div className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-11">
-            <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Rig Atlas</p>
-            <h1 className="max-w-[12ch] text-5xl leading-none font-semibold tracking-[-0.04em] md:text-7xl">
-              自己 DIY 选配整机，同时看跨站价格
-            </h1>
-            <p className="mt-5 max-w-[62ch] text-base leading-7 text-slate-300">
-              面向公开访问的装机选配站点。现在已经补充了更多主流品牌与常用型号，用户可以自己逐项选择 CPU、主板、显卡、内存、
-              SSD、散热器、电源和机箱，并同步看到不同渠道的价格快照。
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#builder"
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-[#ff6b35] to-[#ff8f5e] px-5 text-sm font-bold text-[#09111d]"
-              >
-                开始选配
-              </a>
-              <a
-                href="#sources"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 text-sm"
-              >
-                查看价格来源
-              </a>
-            </div>
-          </div>
-
-          <div className="grid gap-4 rounded-[28px] border border-white/10 bg-[linear-gradient(160deg,rgba(255,107,53,0.16),transparent_36%),linear-gradient(200deg,rgba(139,224,210,0.13),transparent_45%),rgba(14,28,48,0.94)] p-7 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
-            {[
-              ["快照日期", snapshotDate],
-              ["已接入市场", "Amazon / Joybuy / AliExpress / Best Buy / 品牌商城"],
-              ["部署方式", "GitHub Pages"],
-              ["当前模式", "公开浏览 + 更多品牌 + 官方价每日检查"],
-            ].map(([label, value]) => (
-              <div key={label} className="flex items-center justify-between gap-4 border-b border-white/10 pb-4 last:border-none last:pb-0">
-                <span className="text-slate-300">{label}</span>
-                <strong className="text-right">{value}</strong>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {[
-            [String(categories.length), "核心分类"],
-            [String(parts.length), "可选配件"],
-            [String(brandCount), "覆盖品牌"],
-            [String(totalOffers), "价格快照条目"],
-          ].map(([value, label]) => (
-            <article key={label} className="rounded-[20px] border border-white/10 bg-white/5 px-6 py-5">
-              <span className="block text-3xl font-extrabold tracking-[-0.04em]">{value}</span>
-              <span className="text-slate-300">{label}</span>
-            </article>
-          ))}
-        </section>
-
-        <section className="grid gap-4 rounded-[28px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,107,53,0.12),transparent_22%),rgba(255,255,255,0.03)] px-8 py-7 md:grid-cols-2">
-          <div>
-            <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Market Coverage</p>
-            <h2 className="text-3xl leading-tight font-semibold tracking-[-0.04em]">
-              先把装机选择做丰富，再逐步接入更多市场价格
-            </h2>
-          </div>
-          <p className="text-base leading-7 text-slate-300">
-            现在这个版本不只是配件更丰富，还增加了每日价格检查的数据层。官方商城来源会每天自动检查价格，Amazon、Joybuy、AliExpress 这类受限制来源则继续保留最近可核对的快照。
-          </p>
-        </section>
-
-        <section id="builder" className="grid items-start gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.72fr)]">
-          <div className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
-            <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-              <div>
-                <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Builder</p>
-                <h2 className="text-4xl font-semibold tracking-[-0.04em]">多品牌 DIY 选配目录</h2>
-              </div>
-              <p className="max-w-[48ch] text-sm leading-7 text-slate-300">
-                现在每个分类都会先按品牌归类，再展开品牌下的具体型号。先选品牌，再选配件，浏览和比较会更清楚。
+      <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(255,107,53,0.22),transparent_22rem),radial-gradient(circle_at_top_right,rgba(139,224,210,0.18),transparent_24rem),linear-gradient(180deg,#07111f_0%,#0a1728_48%,#08111d_100%)] text-white">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }} />
+        <div className="mx-auto flex w-[min(calc(100%-20px),1400px)] flex-col gap-5 py-5 md:w-[min(calc(100%-32px),1400px)] md:py-7">
+          <section className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(320px,420px)]">
+            <div className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-11">
+              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Rig Atlas</p>
+              <h1 className="max-w-[12ch] text-5xl leading-none font-semibold tracking-[-0.04em] md:text-7xl">
+                Собирай ПК самостоятельно и сразу сравнивай цены на разных площадках
+              </h1>
+              <p className="mt-5 max-w-[62ch] text-base leading-7 text-slate-300">
+                Открытый сайт для подбора комплектующих. В текущей версии уже добавлено больше популярных брендов и моделей, и пользователь может поэтапно выбирать CPU, материнскую плату, видеокарту, память,
+                SSD, систему охлаждения, блок питания и корпус, одновременно видя снимки цен из разных источников.
               </p>
-            </div>
-
-            <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex flex-wrap gap-3">
-                {presets.map((preset) => (
-                  <button
-                    key={preset.id}
-                    type="button"
-                    onClick={() => {
-                      setPresetId(preset.id);
-                      setSelectedParts(preset.parts);
-                      setSelectedOffers(offerMapFrom(preset.parts));
-                      setActiveBrands(brandMapFrom(preset.parts));
-                    }}
-                    className={`rounded-full border px-4 py-2 text-sm transition ${
-                      presetId === preset.id
-                        ? "border-[#ff6b35]/70 bg-[#ff6b35]/15"
-                        : "border-white/10 bg-white/5 hover:border-[#ff6b35]/60 hover:bg-[#ff6b35]/10"
-                    }`}
-                  >
-                    {preset.name}
-                  </button>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  disabled={!canSwitchToCheapest}
-                  onClick={() => {
-                    setSelectedOffers(cheapestOfferMap);
-                  }}
-                  className={`rounded-full border px-4 py-2 text-sm transition ${
-                    canSwitchToCheapest
-                      ? "border-white/10 bg-white/6 hover:border-[#8be0d2]/40"
-                      : "cursor-not-allowed border-white/8 bg-white/4 text-slate-500"
-                  }`}
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                    href="#builder"
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-linear-to-br from-[#ff6b35] to-[#ff8f5e] px-5 text-sm font-bold text-[#09111d]"
                 >
-                  {canSwitchToCheapest ? "全部切到最低价" : "当前已是最低价"}
-                </button>
-                <button
-                  type="button"
-                  disabled={!canResetToDefault}
-                  onClick={() => {
-                    setPresetId(presets[0].id);
-                    setSelectedParts(defaultParts);
-                    setSelectedOffers(defaultOfferMap);
-                    setActiveBrands(brandMapFrom(defaultParts));
-                  }}
-                  className={`rounded-full border px-4 py-2 text-sm transition ${
-                    canResetToDefault
-                      ? "border-white/10 bg-white/6 hover:border-[#ff6b35]/50"
-                      : "cursor-not-allowed border-white/8 bg-white/4 text-slate-500"
-                  }`}
+                  Начать подбор
+                </a>
+                <a
+                    href="#sources"
+                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 text-sm"
                 >
-                  {canResetToDefault ? "恢复默认方案" : "当前已是默认方案"}
-                </button>
+                  Посмотреть источники цен
+                </a>
               </div>
             </div>
 
-            <div className="grid gap-4">
-              {categories.map((category) => {
-                const categoryParts = byCategory(category.id);
-                const categoryBrands = brandsForCategory(category.id);
-                const activeBrand = categoryBrands.includes(activeBrands[category.id]) ? activeBrands[category.id] : categoryBrands[0];
-                const visibleParts = categoryParts.filter((part) => part.brand === activeBrand);
-                const selectedBrand = selectedPartRecord[category.id].brand;
-
-                return (
-                <section key={category.id} className="rounded-[20px] border border-white/10 bg-white/4 p-4">
-                  <div className="mb-3 flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
-                    <div>
-                      <h3 className="text-lg font-semibold">{category.title}</h3>
-                      <p className="mt-1 max-w-[58ch] text-sm leading-6 text-slate-300">{category.description}</p>
-                    </div>
-                    <span className="w-fit rounded-full border border-[#8be0d2]/30 px-3 py-1.5 text-xs text-[#8be0d2]">
-                      {categoryBrands.length} brands / {categoryParts.length} parts
-                    </span>
+            <div className="grid gap-4 rounded-[28px] border border-white/10 bg-[linear-gradient(160deg,rgba(255,107,53,0.16),transparent_36%),linear-gradient(200deg,rgba(139,224,210,0.13),transparent_45%),rgba(14,28,48,0.94)] p-7 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
+              {[
+                ["Дата снимка", snapshotDate],
+                ["Подключённые площадки", "Amazon / Joybuy / AliExpress / Best Buy / Фирменный магазин"],
+                ["Способ размещения", "GitHub Pages"],
+                ["Текущий режим", "Открытый просмотр + больше брендов + ежедневная проверка официальных цен"],
+              ].map(([label, value]) => (
+                  <div key={label} className="flex items-center justify-between gap-4 border-b border-white/10 pb-4 last:border-none last:pb-0">
+                    <span className="text-slate-300">{label}</span>
+                    <strong className="text-right">{value}</strong>
                   </div>
+              ))}
+            </div>
+          </section>
 
-                  <div className="mb-4">
-                    <div className="mb-2 flex items-center justify-between gap-3">
-                      <p className="text-xs uppercase tracking-[0.14em] text-[#8be0d2]">Select Brand First</p>
-                      <p className="text-xs text-slate-400">Current brand: {selectedBrand}</p>
-                    </div>
-                    <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-                      {categoryBrands.map((brand) => {
-                        const brandParts = categoryParts.filter((part) => part.brand === brand);
-                        const isActive = activeBrand === brand;
-                        const isSelected = selectedBrand === brand;
+          <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {[
+              [String(categories.length), "Основные категории"],
+              [String(parts.length), "Доступные комплектующие"],
+              [String(brandCount), "Охваченные бренды"],
+              [String(totalOffers), "Записи со снимками цен"],
+            ].map(([value, label]) => (
+                <article key={label} className="rounded-[20px] border border-white/10 bg-white/5 px-6 py-5">
+                  <span className="block text-3xl font-extrabold tracking-[-0.04em]">{value}</span>
+                  <span className="text-slate-300">{label}</span>
+                </article>
+            ))}
+          </section>
 
-                        return (
-                          <button
-                            key={brand}
-                            type="button"
-                            onClick={() => setActiveBrands((prev) => ({ ...prev, [category.id]: brand }))}
-                            className={`rounded-[16px] border px-4 py-3 text-left transition ${
-                              isActive
-                                ? "border-[#8be0d2]/55 bg-[#8be0d2]/10"
-                                : "border-white/10 bg-[#0a1728]/70 hover:border-[#8be0d2]/35"
-                            }`}
-                          >
-                            <div className="flex items-start justify-between gap-3">
-                              <div className="min-w-0">
-                                <strong className="block truncate text-sm">{brand}</strong>
-                                <span className="mt-1 block text-xs text-slate-400">
-                                  {brandParts.length} models{isSelected ? " · selected" : ""}
+          <section className="grid gap-4 rounded-[28px] border border-white/10 bg-[linear-gradient(90deg,rgba(255,107,53,0.12),transparent_22%),rgba(255,255,255,0.03)] px-8 py-7 md:grid-cols-2">
+            <div>
+              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Market Coverage</p>
+              <h2 className="text-3xl leading-tight font-semibold tracking-[-0.04em]">
+                Сначала расширяем выбор комплектующих, затем постепенно подключаем больше рыночных цен
+              </h2>
+            </div>
+            <p className="text-base leading-7 text-slate-300">
+              Эта версия не только получила больше комплектующих, но и отдельный слой с ежедневной проверкой цен. Ссылки официальных магазинов проверяются каждый день автоматически, а для Amazon, Joybuy, AliExpress и других ограниченных источников сохраняются последние доступные подтверждённые снимки.
+            </p>
+          </section>
+
+          <section id="builder" className="grid items-start gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.72fr)]">
+            <div className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
+              <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+                <div>
+                  <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Builder</p>
+                  <h2 className="text-4xl font-semibold tracking-[-0.04em]">Каталог DIY-комплектующих по разным брендам</h2>
+                </div>
+                <p className="max-w-[48ch] text-sm leading-7 text-slate-300">
+                  Теперь каждая категория сначала группируется по брендам, а затем внутри бренда показываются конкретные модели. Сначала выбираешь бренд, потом комплектующее — так сравнивать намного удобнее.
+                </p>
+              </div>
+
+              <div className="mb-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex flex-wrap gap-3">
+                  {presets.map((preset) => (
+                      <button
+                          key={preset.id}
+                          type="button"
+                          onClick={() => {
+                            setPresetId(preset.id);
+                            setSelectedParts(preset.parts);
+                            setSelectedOffers(offerMapFrom(preset.parts));
+                            setActiveBrands(brandMapFrom(preset.parts));
+                          }}
+                          className={`rounded-full border px-4 py-2 text-sm transition ${
+                              presetId === preset.id
+                                  ? "border-[#ff6b35]/70 bg-[#ff6b35]/15"
+                                  : "border-white/10 bg-white/5 hover:border-[#ff6b35]/60 hover:bg-[#ff6b35]/10"
+                          }`}
+                      >
+                        {preset.name}
+                      </button>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                      type="button"
+                      disabled={!canSwitchToCheapest}
+                      onClick={() => {
+                        setSelectedOffers(cheapestOfferMap);
+                      }}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                          canSwitchToCheapest
+                              ? "border-white/10 bg-white/6 hover:border-[#8be0d2]/40"
+                              : "cursor-not-allowed border-white/8 bg-white/4 text-slate-500"
+                      }`}
+                  >
+                    {canSwitchToCheapest ? "Переключить всё на минимальную цену" : "Сейчас уже выбрана минимальная цена"}
+                  </button>
+                  <button
+                      type="button"
+                      disabled={!canResetToDefault}
+                      onClick={() => {
+                        setPresetId(presets[0].id);
+                        setSelectedParts(defaultParts);
+                        setSelectedOffers(defaultOfferMap);
+                        setActiveBrands(brandMapFrom(defaultParts));
+                      }}
+                      className={`rounded-full border px-4 py-2 text-sm transition ${
+                          canResetToDefault
+                              ? "border-white/10 bg-white/6 hover:border-[#ff6b35]/50"
+                              : "cursor-not-allowed border-white/8 bg-white/4 text-slate-500"
+                      }`}
+                  >
+                    {canResetToDefault ? "Восстановить конфигурацию по умолчанию" : "Сейчас уже выбрана конфигурация по умолчанию"}
+                  </button>
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                {categories.map((category) => {
+                  const categoryParts = byCategory(category.id);
+                  const categoryBrands = brandsForCategory(category.id);
+                  const activeBrand = categoryBrands.includes(activeBrands[category.id]) ? activeBrands[category.id] : categoryBrands[0];
+                  const visibleParts = categoryParts.filter((part) => part.brand === activeBrand);
+                  const selectedBrand = selectedPartRecord[category.id].brand;
+
+                  return (
+                      <section key={category.id} className="rounded-[20px] border border-white/10 bg-white/4 p-4">
+                        <div className="mb-3 flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
+                          <div>
+                            <h3 className="text-lg font-semibold">{category.title}</h3>
+                            <p className="mt-1 max-w-[58ch] text-sm leading-6 text-slate-300">{category.description}</p>
+                          </div>
+                          <span className="w-fit rounded-full border border-[#8be0d2]/30 px-3 py-1.5 text-xs text-[#8be0d2]">
+                      {categoryBrands.length} брендов / {categoryParts.length} комплектующих
+                    </span>
+                        </div>
+
+                        <div className="mb-4">
+                          <div className="mb-2 flex items-center justify-between gap-3">
+                            <p className="text-xs uppercase tracking-[0.14em] text-[#8be0d2]">Сначала выберите бренд</p>
+                            <p className="text-xs text-slate-400">Текущий бренд: {selectedBrand}</p>
+                          </div>
+                          <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                            {categoryBrands.map((brand) => {
+                              const brandParts = categoryParts.filter((part) => part.brand === brand);
+                              const isActive = activeBrand === brand;
+                              const isSelected = selectedBrand === brand;
+
+                              return (
+                                  <button
+                                      key={brand}
+                                      type="button"
+                                      onClick={() => setActiveBrands((prev) => ({ ...prev, [category.id]: brand }))}
+                                      className={`rounded-[16px] border px-4 py-3 text-left transition ${
+                                          isActive
+                                              ? "border-[#8be0d2]/55 bg-[#8be0d2]/10"
+                                              : "border-white/10 bg-[#0a1728]/70 hover:border-[#8be0d2]/35"
+                                      }`}
+                                  >
+                                    <div className="flex items-start justify-between gap-3">
+                                      <div className="min-w-0">
+                                        <strong className="block truncate text-sm">{brand}</strong>
+                                        <span className="mt-1 block text-xs text-slate-400">
+                                  {brandParts.length} моделей{isSelected ? " · выбран" : ""}
                                 </span>
-                              </div>
-                              <span
-                                className={`rounded-full px-2.5 py-1 text-[11px] ${
-                                  isActive ? "bg-[#8be0d2]/14 text-[#b8fff4]" : "bg-white/6 text-slate-300"
-                                }`}
-                              >
+                                      </div>
+                                      <span
+                                          className={`rounded-full px-2.5 py-1 text-[11px] ${
+                                              isActive ? "bg-[#8be0d2]/14 text-[#b8fff4]" : "bg-white/6 text-slate-300"
+                                          }`}
+                                      >
                                 {brandParts.length}
                               </span>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
+                                    </div>
+                                  </button>
+                              );
+                            })}
+                          </div>
+                        </div>
 
-                  <div className="mb-3 flex items-center justify-between gap-3">
-                    <p className="text-xs uppercase tracking-[0.14em] text-[#8be0d2]">{activeBrand} models</p>
-                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">
-                      {visibleParts.length} shown
+                        <div className="mb-3 flex items-center justify-between gap-3">
+                          <p className="text-xs uppercase tracking-[0.14em] text-[#8be0d2]">{activeBrand} — модели</p>
+                          <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300">
+                      {visibleParts.length} показано
                     </span>
-                  </div>
+                        </div>
 
-                  <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-                    {visibleParts.map((part) => {
-                      const currentOffer = chosenOffer(part, selectedOffers[category.id]);
+                        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+                          {visibleParts.map((part) => {
+                            const currentOffer = chosenOffer(part, selectedOffers[category.id]);
 
-                      return (
-                        <article
-                          key={part.id}
-                          className={`rounded-[16px] border bg-[#0a1728]/90 p-3 transition ${
-                            selectedParts[category.id] === part.id
-                              ? "border-[#ff6b35]/60"
-                              : "border-white/10 hover:border-[#ff6b35]/45"
-                          }`}
-                        >
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setSelectedParts((prev) => ({ ...prev, [category.id]: part.id }));
-                              setSelectedOffers((prev) => ({ ...prev, [category.id]: cheapest(part).id }));
-                              setActiveBrands((prev) => ({ ...prev, [category.id]: part.brand }));
-                            }}
-                            className="block w-full text-left"
-                          >
-                            <div className="flex items-start justify-between gap-2.5">
-                              <div className="min-w-0">
-                                <h4 className="line-clamp-2 text-[1.05rem] leading-5 font-medium">{part.name}</h4>
-                                <p className="mt-0.5 text-xs uppercase tracking-[0.12em] text-slate-400">{part.brand}</p>
-                              </div>
-                              <span className="shrink-0 rounded-xl bg-[#8be0d2]/10 px-2.5 py-1.5 text-sm font-bold text-[#8be0d2]">
+                            return (
+                                <article
+                                    key={part.id}
+                                    className={`rounded-[16px] border bg-[#0a1728]/90 p-3 transition ${
+                                        selectedParts[category.id] === part.id
+                                            ? "border-[#ff6b35]/60"
+                                            : "border-white/10 hover:border-[#ff6b35]/45"
+                                    }`}
+                                >
+                                  <button
+                                      type="button"
+                                      onClick={() => {
+                                        setSelectedParts((prev) => ({ ...prev, [category.id]: part.id }));
+                                        setSelectedOffers((prev) => ({ ...prev, [category.id]: cheapest(part).id }));
+                                        setActiveBrands((prev) => ({ ...prev, [category.id]: part.brand }));
+                                      }}
+                                      className="block w-full text-left"
+                                  >
+                                    <div className="flex items-start justify-between gap-2.5">
+                                      <div className="min-w-0">
+                                        <h4 className="line-clamp-2 text-[1.05rem] leading-5 font-medium">{part.name}</h4>
+                                        <p className="mt-0.5 text-xs uppercase tracking-[0.12em] text-slate-400">{part.brand}</p>
+                                      </div>
+                                      <span className="shrink-0 rounded-xl bg-[#8be0d2]/10 px-2.5 py-1.5 text-sm font-bold text-[#8be0d2]">
                                 {gbp(toGbp(cheapest(part).price, cheapest(part).currency))}
                               </span>
-                            </div>
-                            <p className="mt-3 line-clamp-2 min-h-10 text-xs leading-5 text-slate-300">{part.summary}</p>
-                            <div className="mt-2 flex flex-wrap gap-1.5">
-                              {part.tags.map((tag) => (
-                                <span key={tag} className="rounded-full bg-white/6 px-2 py-1 text-[11px] text-slate-200">
+                                    </div>
+                                    <p className="mt-3 line-clamp-2 min-h-10 text-xs leading-5 text-slate-300">{part.summary}</p>
+                                    <div className="mt-2 flex flex-wrap gap-1.5">
+                                      {part.tags.map((tag) => (
+                                          <span key={tag} className="rounded-full bg-white/6 px-2 py-1 text-[11px] text-slate-200">
                                   {tag}
                                 </span>
-                              ))}
-                            </div>
-                          </button>
+                                      ))}
+                                    </div>
+                                  </button>
 
-                          <div className="mt-3 grid gap-1.5">
-                            {part.offers.map((offer) => (
-                              <button
-                                key={offer.id}
-                                type="button"
-                                onClick={() => setSelectedOffers((prev) => ({ ...prev, [category.id]: offer.id }))}
-                                className={`flex w-full items-start justify-between gap-2 rounded-[12px] border px-2.5 py-2 text-left transition ${
-                                  currentOffer.id === offer.id
-                                    ? "border-[#8be0d2]/45 bg-[#8be0d2]/8"
-                                    : "border-white/10 bg-white/4 hover:border-[#8be0d2]/35"
-                                }`}
-                              >
+                                  <div className="mt-3 grid gap-1.5">
+                                    {part.offers.map((offer) => (
+                                        <button
+                                            key={offer.id}
+                                            type="button"
+                                            onClick={() => setSelectedOffers((prev) => ({ ...prev, [category.id]: offer.id }))}
+                                            className={`flex w-full items-start justify-between gap-2 rounded-[12px] border px-2.5 py-2 text-left transition ${
+                                                currentOffer.id === offer.id
+                                                    ? "border-[#8be0d2]/45 bg-[#8be0d2]/8"
+                                                    : "border-white/10 bg-white/4 hover:border-[#8be0d2]/35"
+                                            }`}
+                                        >
                                 <span className="grid min-w-0 gap-0.5">
                                   <strong className="line-clamp-1 text-xs">
                                     {marketMeta[offer.market].label} · {offer.title}
                                   </strong>
                                   <small className="line-clamp-1 text-[11px] text-slate-400">{offer.note}</small>
                                 </span>
-                                <span className="shrink-0 text-right text-xs text-slate-200">
+                                          <span className="shrink-0 text-right text-xs text-slate-200">
                                   {fmt(offer.price, offer.currency)}
-                                  <small className="block text-[11px] text-slate-400">
+                                            <small className="block text-[11px] text-slate-400">
                                     ≈ {gbp(toGbp(offer.price, offer.currency))}
                                   </small>
                                 </span>
-                              </button>
-                            ))}
-                          </div>
-                        </article>
-                      );
-                    })}
-                  </div>
-                </section>
-                );
-              })}
+                                        </button>
+                                    ))}
+                                  </div>
+                                </article>
+                            );
+                          })}
+                        </div>
+                      </section>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          <aside className="pc-scrollbar grid gap-4 xl:sticky xl:top-5 xl:self-start xl:h-[calc(100vh-2.5rem)] xl:overflow-y-scroll xl:overscroll-contain xl:pr-2 xl:pb-4">
-            <section className="flex min-h-0 flex-col rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
-              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Current Build</p>
-              <div className="mb-3 flex flex-wrap items-center gap-2">
+            <aside className="pc-scrollbar grid gap-4 xl:sticky xl:top-5 xl:self-start xl:h-[calc(100vh-2.5rem)] xl:overflow-y-scroll xl:overscroll-contain xl:pr-2 xl:pb-4">
+              <section className="flex min-h-0 flex-col rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
+                <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Current Build</p>
+                <div className="mb-3 flex flex-wrap items-center gap-2">
                 <span className={`rounded-full px-3 py-1 text-xs ${isCustomBuild ? "bg-[#8be0d2]/12 text-[#8be0d2]" : "bg-[#ff6b35]/12 text-[#ffb89d]"}`}>
-                  {isCustomBuild ? "DIY 自定义中" : `当前基于 ${activePreset.name}`}
+                  {isCustomBuild ? "Идёт DIY-настройка" : `Текущая база: ${activePreset.name}`}
                 </span>
-              </div>
-              <h2 className="text-3xl font-semibold tracking-[-0.04em]">
-                {selectedPartRecord.cpu.name} + {selectedPartRecord.gpu.name}
-              </h2>
-              <p className="mt-2 text-sm leading-7 text-slate-300">
-                {selectedPartRecord.motherboard.name} / {selectedPartRecord.ram.name} / {selectedPartRecord.case.name}
-              </p>
-              <div className="mt-5 rounded-[20px] bg-[linear-gradient(135deg,rgba(255,107,53,0.16),rgba(255,107,53,0.04)),rgba(255,255,255,0.03)] p-5">
-                <span className="block text-sm text-slate-300">预估总价</span>
-                <strong className="mt-2 block text-4xl tracking-[-0.04em]">{gbp(total)}</strong>
-                <small className="block text-sm text-slate-400">
-                  按 1 USD = 0.7465 GBP、1 EUR = 0.8575 GBP 估算，每日检查日期 {snapshotDate}
-                </small>
-              </div>
-            </section>
+                </div>
+                <h2 className="text-3xl font-semibold tracking-[-0.04em]">
+                  {selectedPartRecord.cpu.name} + {selectedPartRecord.gpu.name}
+                </h2>
+                <p className="mt-2 text-sm leading-7 text-slate-300">
+                  {selectedPartRecord.motherboard.name} / {selectedPartRecord.ram.name} / {selectedPartRecord.case.name}
+                </p>
+                <div className="mt-5 rounded-[20px] bg-[linear-gradient(135deg,rgba(255,107,53,0.16),rgba(255,107,53,0.04)),rgba(255,255,255,0.03)] p-5">
+                  <span className="block text-sm text-slate-300">Предполагаемая итоговая цена</span>
+                  <strong className="mt-2 block text-4xl tracking-[-0.04em]">{gbp(total)}</strong>
+                  <small className="block text-sm text-slate-400">
+                    Расчёт по курсу 1 USD = 0.7465 GBP, 1 EUR = 0.8575 GBP, дата ежедневной проверки: {snapshotDate}
+                  </small>
+                </div>
+              </section>
 
-            <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <h3 className="text-lg font-semibold">已选配件</h3>
-                <span className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300">
+              <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <h3 className="text-lg font-semibold">Выбранные комплектующие</h3>
+                  <span className="rounded-full border border-white/10 px-3 py-1 text-sm text-slate-300">
                   {categories.length} / {categories.length}
                 </span>
-              </div>
-              <div className="grid gap-2.5">
-                {categories.map((category) => (
-                  <div key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
-                    <strong className="block text-sm">
-                      {category.title} · {selectedPartRecord[category.id].name}
-                    </strong>
-                    <small className="text-xs leading-6 text-slate-400">
-                      {marketMeta[selectedOfferRecord[category.id].market].label} ·{" "}
-                      {fmt(selectedOfferRecord[category.id].price, selectedOfferRecord[category.id].currency)} · 约{" "}
-                      {gbp(toGbp(selectedOfferRecord[category.id].price, selectedOfferRecord[category.id].currency))}
-                    </small>
-                    <a
-                      href={selectedOfferRecord[category.id].url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-2 inline-flex rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 hover:border-[#8be0d2]/40"
-                    >
-                      查看当前价格来源
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </section>
+                </div>
+                <div className="grid gap-2.5">
+                  {categories.map((category) => (
+                      <div key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+                        <strong className="block text-sm">
+                          {category.title} · {selectedPartRecord[category.id].name}
+                        </strong>
+                        <small className="text-xs leading-6 text-slate-400">
+                          {marketMeta[selectedOfferRecord[category.id].market].label} ·{" "}
+                          {fmt(selectedOfferRecord[category.id].price, selectedOfferRecord[category.id].currency)} · примерно{" "}
+                          {gbp(toGbp(selectedOfferRecord[category.id].price, selectedOfferRecord[category.id].currency))}
+                        </small>
+                        <a
+                            href={selectedOfferRecord[category.id].url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-2 inline-flex rounded-full border border-white/10 px-3 py-1 text-xs text-slate-200 hover:border-[#8be0d2]/40"
+                        >
+                          Посмотреть текущий источник цены
+                        </a>
+                      </div>
+                  ))}
+                </div>
+              </section>
 
-            <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
-              <h3 className="mb-4 text-lg font-semibold">兼容性检查</h3>
-              <div className="grid gap-2.5">
-                {compatibility.map((item) => (
-                  <div key={item.text} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+              <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
+                <h3 className="mb-4 text-lg font-semibold">Проверка совместимости</h3>
+                <div className="grid gap-2.5">
+                  {compatibility.map((item) => (
+                      <div key={item.text} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
                     <span
-                      className={`mt-1.5 h-2.5 w-2.5 rounded-full ${
-                        item.status === "pass" ? "bg-emerald-400" : item.status === "warn" ? "bg-amber-300" : "bg-rose-400"
-                      }`}
+                        className={`mt-1.5 h-2.5 w-2.5 rounded-full ${
+                            item.status === "pass" ? "bg-emerald-400" : item.status === "warn" ? "bg-amber-300" : "bg-rose-400"
+                        }`}
                     />
-                    <span className="text-sm text-slate-200">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
+                        <span className="text-sm text-slate-200">{item.text}</span>
+                      </div>
+                  ))}
+                </div>
+              </section>
 
-            <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
-              <h3 className="mb-4 text-lg font-semibold">渠道分布</h3>
-              <div className="grid gap-2.5">
-                {Object.entries(marketSpend).map(([market, value]) => (
-                  <div key={market} className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
-                    <div>
-                      <strong className="block text-sm">{marketMeta[market as MarketId].label}</strong>
-                      <small className="text-xs text-slate-400">{gbp(value)}</small>
-                    </div>
-                    <div className="h-2 w-32 overflow-hidden rounded-full bg-white/10">
-                      <div
-                        className="h-full rounded-full"
-                        style={{
-                          width: `${Math.max((value / total) * 100, 8)}%`,
-                          background: marketMeta[market as MarketId].color,
-                        }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </aside>
-        </section>
+              <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px]">
+                <h3 className="mb-4 text-lg font-semibold">Распределение по площадкам</h3>
+                <div className="grid gap-2.5">
+                  {Object.entries(marketSpend).map(([market, value]) => (
+                      <div key={market} className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-white/4 px-4 py-3">
+                        <div>
+                          <strong className="block text-sm">{marketMeta[market as MarketId].label}</strong>
+                          <small className="text-xs text-slate-400">{gbp(value)}</small>
+                        </div>
+                        <div className="h-2 w-32 overflow-hidden rounded-full bg-white/10">
+                          <div
+                              className="h-full rounded-full"
+                              style={{
+                                width: `${Math.max((value / total) * 100, 8)}%`,
+                                background: marketMeta[market as MarketId].color,
+                              }}
+                          />
+                        </div>
+                      </div>
+                  ))}
+                </div>
+              </section>
+            </aside>
+          </section>
 
-        <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
-          <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-            <div>
-              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Game Estimate</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em]">当前配置游戏流畅度</h2>
+          <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
+            <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div>
+                <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Game Estimate</p>
+                <h2 className="text-4xl font-semibold tracking-[-0.04em]">Игровая плавность текущей конфигурации</h2>
+              </div>
+              <p className="max-w-[54ch] text-sm leading-7 text-slate-300">
+                Это внутренняя оценка на основе текущего сочетания CPU, видеокарты и памяти. Она помогает быстро понять примерный диапазон FPS и настроек графики для популярных онлайн-игр, обычных AAA-проектов и тяжёлых AAA-игр из Steam.
+              </p>
             </div>
-            <p className="max-w-[54ch] text-sm leading-7 text-slate-300">
-              这是基于当前 CPU、显卡和内存组合做的站内估算，适合快速判断主流网游、常见 3A 和 Steam 重度 3A 的大致帧率与画质区间。
-            </p>
-          </div>
 
-          <div className="mb-4 flex flex-wrap gap-2">
-            {buildHighlights.map((item) => (
-              <span key={item} className="rounded-full border border-[#8be0d2]/20 bg-[#8be0d2]/8 px-3 py-1.5 text-xs text-[#b8fff4]">
+            <div className="mb-4 flex flex-wrap gap-2">
+              {buildHighlights.map((item) => (
+                  <span key={item} className="rounded-full border border-[#8be0d2]/20 bg-[#8be0d2]/8 px-3 py-1.5 text-xs text-[#b8fff4]">
                 {item}
               </span>
-            ))}
-          </div>
-
-          <div className="grid gap-4 xl:grid-cols-3">
-            {gameEstimates.map((item) => (
-              <article key={item.title} className="rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-5">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#8be0d2]">{item.title}</p>
-                <h3 className="mt-2 text-3xl font-semibold tracking-[-0.04em]">{item.fps}</h3>
-                <p className="mt-1 text-sm text-slate-400">{item.summary}</p>
-                <div className="mt-4 grid gap-2 text-sm">
-                  <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
-                    <span className="text-slate-400">推荐画质</span>
-                    <strong>{item.quality}</strong>
-                  </div>
-                  <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
-                    <span className="text-slate-400">建议分辨率</span>
-                    <strong className="text-right">{item.resolution}</strong>
-                  </div>
-                  <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
-                    <span className="text-slate-400">流畅度判断</span>
-                    <strong className="text-[#8be0d2]">{item.smoothness}</strong>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
-          <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-            <div>
-              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Selected Links</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em]">当前配置购买链接</h2>
+              ))}
             </div>
-            <p className="max-w-[50ch] text-sm leading-7 text-slate-300">
-              这里集中放当前已经选中的每个配件链接，方便你在确认整机方案后直接逐项打开对应页面核对价格和下单。
-            </p>
-          </div>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {selectedLinkGroups.map(({ category, part, offer }) => (
-              <article key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-4">
-                <p className="text-xs uppercase tracking-[0.16em] text-[#8be0d2]">{category.title}</p>
-                <h3 className="mt-2 text-lg font-semibold">{part.name}</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  {marketMeta[offer.market].label} · {fmt(offer.price, offer.currency)}
-                </p>
-                <a
-                  href={offer.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:border-[#ff6b35]/60"
-                >
-                  打开当前配件链接
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="sources" className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
-          <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
-            <div>
-              <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Source Snapshot</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em]">当前价格来源说明</h2>
+            <div className="grid gap-4 xl:grid-cols-3">
+              {gameEstimates.map((item) => (
+                  <article key={item.title} className="rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-5">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[#8be0d2]">{item.title}</p>
+                    <h3 className="mt-2 text-3xl font-semibold tracking-[-0.04em]">{item.fps}</h3>
+                    <p className="mt-1 text-sm text-slate-400">{item.summary}</p>
+                    <div className="mt-4 grid gap-2 text-sm">
+                      <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
+                        <span className="text-slate-400">Рекомендуемые настройки графики</span>
+                        <strong>{item.quality}</strong>
+                      </div>
+                      <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
+                        <span className="text-slate-400">Рекомендуемое разрешение</span>
+                        <strong className="text-right">{item.resolution}</strong>
+                      </div>
+                      <div className="flex items-center justify-between gap-4 rounded-2xl border border-white/8 bg-white/4 px-3 py-2">
+                        <span className="text-slate-400">Оценка плавности</span>
+                        <strong className="text-[#8be0d2]">{item.smoothness}</strong>
+                      </div>
+                    </div>
+                  </article>
+              ))}
             </div>
-            <p className="max-w-[50ch] text-sm leading-7 text-slate-300">
-              官方商城链接会通过 GitHub Actions 每日自动检查价格；Amazon、Joybuy、AliExpress 等受限制来源保留最近一次成功快照。点击来源按钮即可继续核对。
-            </p>
-          </div>
+          </section>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {categories.map((category) => (
-              <article key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-4">
-                <h3 className="text-base font-semibold">{category.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{category.description}</p>
-                <p className="mt-2 text-xs text-slate-400">价格快照日期：{snapshotDate}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {byCategory(category.id).flatMap((part) =>
-                    part.offers.map((offer) => (
-                      <a
-                        key={offer.id}
+          <section className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
+            <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div>
+                <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Selected Links</p>
+                <h2 className="text-4xl font-semibold tracking-[-0.04em]">Ссылки на покупку для текущей конфигурации</h2>
+              </div>
+              <p className="max-w-[50ch] text-sm leading-7 text-slate-300">
+                Здесь собраны ссылки на все выбранные комплектующие, чтобы после подтверждения конфигурации можно было сразу открыть нужные страницы, проверить цену и перейти к заказу.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {selectedLinkGroups.map(({ category, part, offer }) => (
+                  <article key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-4">
+                    <p className="text-xs uppercase tracking-[0.16em] text-[#8be0d2]">{category.title}</p>
+                    <h3 className="mt-2 text-lg font-semibold">{part.name}</h3>
+                    <p className="mt-2 text-sm text-slate-300">
+                      {marketMeta[offer.market].label} · {fmt(offer.price, offer.currency)}
+                    </p>
+                    <a
                         href={offer.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs hover:border-[#ff6b35]/60"
-                      >
-                        {marketMeta[offer.market].label} · {part.name}
-                      </a>
-                    ))
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      </div>
-    </main>
+                        className="mt-4 inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm hover:border-[#ff6b35]/60"
+                    >
+                      Открыть ссылку на текущий комплектующий
+                    </a>
+                  </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="sources" className="rounded-[28px] border border-white/10 bg-[rgba(9,20,36,0.82)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-[18px] md:p-7">
+            <div className="mb-6 flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
+              <div>
+                <p className="mb-2 text-[0.72rem] uppercase tracking-[0.18em] text-[#8be0d2]">Source Snapshot</p>
+                <h2 className="text-4xl font-semibold tracking-[-0.04em]">Описание текущих источников цен</h2>
+              </div>
+              <p className="max-w-[50ch] text-sm leading-7 text-slate-300">
+                Ссылки официальных магазинов ежедневно проверяются через GitHub Actions; для ограниченных источников вроде Amazon, Joybuy и AliExpress сохраняется последний успешный снимок. Нажми на кнопку источника, чтобы продолжить проверку.
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {categories.map((category) => (
+                  <article key={category.id} className="rounded-2xl border border-white/10 bg-white/4 px-4 py-4">
+                    <h3 className="text-base font-semibold">{category.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-300">{category.description}</p>
+                    <p className="mt-2 text-xs text-slate-400">Дата снимка цены: {snapshotDate}</p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {byCategory(category.id).flatMap((part) =>
+                          part.offers.map((offer) => (
+                              <a
+                                  key={offer.id}
+                                  href={offer.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs hover:border-[#ff6b35]/60"
+                              >
+                                {marketMeta[offer.market].label} · {part.name}
+                              </a>
+                          ))
+                      )}
+                    </div>
+                  </article>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
   );
 }
